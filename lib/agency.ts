@@ -2,8 +2,7 @@ export const AGENCIA = {
   nombre: "ClinicaWeb",
   eslogan: "Webs para clínicas dentales que convierten búsquedas en citas",
   email: "hola@tuclinicaweb.com",
-  // TODO: reemplazar por el número real de WhatsApp de la agencia
-  whatsapp: "000000000000",
+  whatsapp: "5492615368176",
   whatsappMensaje: "Hola, quiero información sobre las webs para clínicas",
   colores: {
     primario: "#123A5C",
