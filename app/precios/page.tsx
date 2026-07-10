@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import Precios from "@/components/Precios";
+import CalculadoraROI from "@/components/CalculadoraROI";
 import FAQ from "@/components/FAQ";
 import { AGENCIA } from "@/lib/agency";
 
@@ -18,6 +19,7 @@ export default function PreciosPage() {
         descripcion="El pago inicial cubre el diseño de tu web. La cuota mensual incluye hosting, dominio y mantenimiento."
       />
       <Precios />
+      <CalculadoraROI />
       <FAQ />
     </>
   );

@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import PhoneMockup from "@/components/PhoneMockup";
+import Reveal from "@/components/Reveal";
 import { AGENCIA, whatsappHrefAgencia } from "@/lib/agency";
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function ContactoPage() {
       />
 
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[auto_1fr]">
+        <Reveal className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[auto_1fr]">
           <PhoneMockup />
 
           <div className="grid gap-6 sm:grid-cols-2">
@@ -26,7 +27,7 @@ export default function ContactoPage() {
               href={whatsappHrefAgencia()}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366]">
                 <WhatsAppIcon className="h-6 w-6" />
@@ -48,7 +49,7 @@ export default function ContactoPage() {
 
             <a
               href={`mailto:${AGENCIA.email}`}
-              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
             >
               <div
                 className="flex h-12 w-12 items-center justify-center rounded-xl"
@@ -71,7 +72,7 @@ export default function ContactoPage() {
               </p>
             </a>
           </div>
-        </div>
+        </Reveal>
 
         <div className="mx-auto mt-12 max-w-2xl rounded-2xl bg-neutral-50 p-6 text-center text-sm text-neutral-600">
           Sin compromiso: te armamos la propuesta con tus datos reales antes

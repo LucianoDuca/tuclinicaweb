@@ -1,4 +1,5 @@
 import PageHero from "@/components/PageHero";
+import Reveal from "@/components/Reveal";
 import { AGENCIA, whatsappHrefAgencia } from "@/lib/agency";
 
 export const metadata = {
@@ -34,11 +35,11 @@ export default function NosotrosPage() {
       />
 
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center sm:flex-row sm:text-left">
+        <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center sm:flex-row sm:text-left">
           <img
             src="/team/luciano.webp"
             alt="Luciano Duca, fundador de ClinicaWeb"
-            className="h-36 w-36 shrink-0 rounded-full object-cover shadow-lg ring-4 ring-white"
+            className="h-36 w-36 shrink-0 rounded-full object-cover shadow-lg ring-4 ring-white transition hover:scale-105"
             style={{ boxShadow: `0 0 0 4px ${AGENCIA.colores.primario}22` }}
           />
           <div>
@@ -67,25 +68,24 @@ export default function NosotrosPage() {
               vez.
             </p>
           </div>
-        </div>
+        </Reveal>
 
         <div className="mx-auto mt-16 max-w-5xl">
           <h3 className="text-center text-lg font-semibold text-neutral-900">
             Cómo trabajamos
           </h3>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {VALORES.map((valor) => (
-              <div
-                key={valor.titulo}
-                className="rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm"
-              >
-                <h4 className="font-semibold text-neutral-900">
-                  {valor.titulo}
-                </h4>
-                <p className="mt-2 text-sm text-neutral-600">
-                  {valor.descripcion}
-                </p>
-              </div>
+            {VALORES.map((valor, i) => (
+              <Reveal key={valor.titulo} delay={i * 100}>
+                <div className="h-full rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1">
+                  <h4 className="font-semibold text-neutral-900">
+                    {valor.titulo}
+                  </h4>
+                  <p className="mt-2 text-sm text-neutral-600">
+                    {valor.descripcion}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function NosotrosPage() {
             href={whatsappHrefAgencia()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
             style={{ backgroundColor: AGENCIA.colores.primario }}
           >
             Escribime por WhatsApp

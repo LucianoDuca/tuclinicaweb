@@ -2,6 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import ConfianzaBadges from "@/components/ConfianzaBadges";
 import DemoMockup from "@/components/DemoMockup";
+import Reveal from "@/components/Reveal";
 import { AGENCIA } from "@/lib/agency";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
       <ConfianzaBadges />
 
       <section id="demo" className="bg-neutral-50 px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-3xl text-center">
+        <Reveal className="mx-auto max-w-3xl text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
             style={{ color: AGENCIA.colores.primario }}
@@ -21,15 +22,15 @@ export default function Home() {
           <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
             Así queda una clínica con nosotros
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="mt-10">
+        <Reveal delay={150} className="mt-10">
           <DemoMockup />
-        </div>
+        </Reveal>
       </section>
 
       <section className="px-6 py-16 text-center md:py-20">
-        <div className="mx-auto max-w-2xl">
+        <Reveal className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
             ¿Querés ver cómo quedaría la web de tu propia clínica?
           </h2>
@@ -40,19 +41,19 @@ export default function Home() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/precios"
-              className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90"
+              className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
               style={{ backgroundColor: AGENCIA.colores.primario }}
             >
               Ver precios
             </Link>
             <Link
               href="/contacto"
-              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 py-3 font-semibold text-neutral-900 transition hover:bg-neutral-50"
+              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-6 py-3 font-semibold text-neutral-900 transition hover:bg-neutral-50 active:scale-95"
             >
               Hablar con nosotros
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

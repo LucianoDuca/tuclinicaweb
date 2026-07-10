@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { AGENCIA } from "@/lib/agency";
+import Reveal from "@/components/Reveal";
 
 const PREGUNTAS = [
   {
@@ -36,7 +37,7 @@ export default function FAQ() {
 
   return (
     <section className="px-6 py-16 md:py-24">
-      <div className="mx-auto max-w-3xl">
+      <Reveal className="mx-auto max-w-3xl">
         <div className="text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
@@ -73,7 +74,7 @@ export default function FAQ() {
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

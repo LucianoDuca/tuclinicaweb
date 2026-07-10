@@ -1,4 +1,5 @@
 import { AGENCIA } from "@/lib/agency";
+import Reveal from "@/components/Reveal";
 
 const PASOS = [
   {
@@ -38,8 +39,8 @@ export default function ComoFunciona() {
         </div>
 
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
-          {PASOS.map((paso) => (
-            <div key={paso.numero} className="text-center">
+          {PASOS.map((paso, i) => (
+            <Reveal key={paso.numero} delay={i * 120} className="text-center">
               <div
                 className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white"
                 style={{ backgroundColor: AGENCIA.colores.primario }}
@@ -50,7 +51,7 @@ export default function ComoFunciona() {
               <p className="mt-2 text-sm text-neutral-600">
                 {paso.descripcion}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function PresupuestoButton({
   const [ciudad, setCiudad] = useState("");
 
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition";
+    "inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition active:scale-95";
   const style =
     variant === "solid"
       ? "text-white shadow-lg hover:opacity-90"
@@ -78,7 +78,7 @@ export default function PresupuestoButton({
           </div>
           <button
             type="submit"
-            className="w-full rounded-full py-3 font-semibold text-white shadow-lg transition hover:opacity-90"
+            className="w-full rounded-full py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
             style={{ backgroundColor: AGENCIA.colores.primario }}
           >
             Continuar por WhatsApp

@@ -1,4 +1,5 @@
 import { AGENCIA, whatsappHrefAgencia } from "@/lib/agency";
+import Reveal from "@/components/Reveal";
 
 const PLANES = [
   {
@@ -46,10 +47,10 @@ export default function Precios() {
     <section id="precios" className="px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-6 md:grid-cols-3">
-          {PLANES.map((plan) => (
+          {PLANES.map((plan, i) => (
+            <Reveal key={plan.nombre} delay={i * 100}>
             <div
-              key={plan.nombre}
-              className={`rounded-2xl border-2 p-8 ${
+              className={`h-full rounded-2xl border-2 p-8 transition hover:-translate-y-1 ${
                 plan.destacado ? "shadow-xl" : "border-neutral-200"
               }`}
               style={
@@ -95,7 +96,7 @@ export default function Precios() {
                 href={whatsappHrefAgencia()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`mt-8 block rounded-full px-5 py-2.5 text-center text-sm font-semibold transition ${
+                className={`mt-8 block rounded-full px-5 py-2.5 text-center text-sm font-semibold transition active:scale-95 ${
                   plan.destacado
                     ? "text-white hover:opacity-90"
                     : "border border-neutral-300 text-neutral-900 hover:bg-neutral-50"
@@ -105,6 +106,7 @@ export default function Precios() {
                 Empezar con {plan.nombre}
               </a>
             </div>
+            </Reveal>
           ))}
         </div>
       </div>

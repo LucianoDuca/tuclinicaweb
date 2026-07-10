@@ -109,7 +109,7 @@ export default function DemoMockup() {
       <div className="mx-auto max-w-3xl">
         <button
           onClick={() => setOpen(true)}
-          className="block w-full text-left transition hover:-translate-y-0.5"
+          className="block w-full text-left transition duration-300 ease-out hover:-translate-y-1 hover:rotate-[0.5deg] active:scale-[0.99]"
         >
           <BrowserFrame>
             <HeroSlice />
