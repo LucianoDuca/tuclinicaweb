@@ -1,4 +1,5 @@
-import { AGENCIA, whatsappHrefAgencia } from "@/lib/agency";
+import { AGENCIA } from "@/lib/agency";
+import PresupuestoButton from "@/components/PresupuestoButton";
 
 export default function Hero() {
   return (
@@ -37,14 +38,9 @@ export default function Hero() {
           >
             Ver una demo real
           </a>
-          <a
-            href={whatsappHrefAgencia()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-white/50 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
-          >
+          <PresupuestoButton variant="outline">
             Hablar por WhatsApp
-          </a>
+          </PresupuestoButton>
         </div>
       </div>
     </section>

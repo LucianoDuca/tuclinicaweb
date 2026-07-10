@@ -34,13 +34,13 @@ export default function NosotrosPage() {
       />
 
       <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-          <div
-            className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full text-2xl font-bold text-white"
-            style={{ backgroundColor: AGENCIA.colores.primario }}
-          >
-            LD
-          </div>
+        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center sm:flex-row sm:text-left">
+          <img
+            src="/team/luciano.webp"
+            alt="Luciano Duca, fundador de ClinicaWeb"
+            className="h-36 w-36 shrink-0 rounded-full object-cover shadow-lg ring-4 ring-white"
+            style={{ boxShadow: `0 0 0 4px ${AGENCIA.colores.primario}22` }}
+          />
           <div>
             <h2 className="text-xl font-bold text-neutral-900">
               Luciano Duca

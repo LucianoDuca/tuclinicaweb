@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/Logo";
-import { whatsappHrefAgencia } from "@/lib/agency";
+import PresupuestoButton from "@/components/PresupuestoButton";
 
 const NAV = [
   { href: "/servicios", label: "Servicios" },
@@ -23,14 +23,9 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <a
-          href={whatsappHrefAgencia()}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full bg-[#123A5C] px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
-        >
+        <PresupuestoButton className="!px-5 !py-2 !text-sm shadow-sm">
           Pedir presupuesto
-        </a>
+        </PresupuestoButton>
       </div>
       <nav className="flex items-center justify-center gap-6 border-t border-neutral-100 px-6 py-2 text-xs font-medium text-neutral-600 md:hidden">
         {NAV.map((item) => (
