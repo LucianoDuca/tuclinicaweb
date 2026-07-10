@@ -72,7 +72,7 @@ export default function CalculadoraROI() {
 
           <div
             className="mt-8 rounded-xl p-6 text-center text-white"
-            style={{ backgroundColor: AGENCIA.colores.primario }}
+            style={{ backgroundImage: AGENCIA.degradeRaro }}
           >
             <p className="text-sm text-white/80">
               Con eso, tu web te generaría aproximadamente

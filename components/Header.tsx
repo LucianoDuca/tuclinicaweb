@@ -36,7 +36,7 @@ export default function Header() {
                 {activo && (
                   <span
                     className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full"
-                    style={{ backgroundColor: AGENCIA.colores.primario }}
+                    style={{ backgroundImage: AGENCIA.degradeRaro }}
                   />
                 )}
               </Link>

@@ -43,7 +43,7 @@ export default function ComoFunciona() {
             <Reveal key={paso.numero} delay={i * 120} className="text-center">
               <div
                 className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white"
-                style={{ backgroundColor: AGENCIA.colores.primario }}
+                style={{ backgroundImage: AGENCIA.degradeRaro }}
               >
                 {paso.numero}
               </div>

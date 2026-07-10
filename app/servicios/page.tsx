@@ -65,7 +65,7 @@ export default function ServiciosPage() {
                 <div className="h-full rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
                   <div
                     className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-white"
-                    style={{ backgroundColor: AGENCIA.colores.primario }}
+                    style={{ backgroundImage: AGENCIA.degradeRaro }}
                   >
                     <item.icon className="h-5 w-5" />
                   </div>

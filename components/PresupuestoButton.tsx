@@ -39,7 +39,7 @@ export default function PresupuestoButton({
         onClick={() => setOpen(true)}
         className={`${base} ${style} ${className ?? ""}`}
         style={
-          variant === "solid" ? { backgroundColor: AGENCIA.colores.primario } : undefined
+          variant === "solid" ? { backgroundImage: AGENCIA.degradeRaro } : undefined
         }
       >
         {children}
@@ -79,7 +79,7 @@ export default function PresupuestoButton({
           <button
             type="submit"
             className="w-full rounded-full py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
-            style={{ backgroundColor: AGENCIA.colores.primario }}
+            style={{ backgroundImage: AGENCIA.degradeRaro }}
           >
             Continuar por WhatsApp
           </button>

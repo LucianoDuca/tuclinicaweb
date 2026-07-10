@@ -62,7 +62,7 @@ export default function Precios() {
               {plan.destacado && (
                 <p
                   className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-semibold text-white"
-                  style={{ backgroundColor: AGENCIA.colores.acento }}
+                  style={{ backgroundImage: AGENCIA.degradeRaro }}
                 >
                   Recomendado
                 </p>
@@ -101,7 +101,7 @@ export default function Precios() {
                     ? "text-white hover:opacity-90"
                     : "border border-neutral-300 text-neutral-900 hover:bg-neutral-50"
                 }`}
-                style={plan.destacado ? { backgroundColor: AGENCIA.colores.primario } : undefined}
+                style={plan.destacado ? { backgroundImage: AGENCIA.degradeRaro } : undefined}
               >
                 Empezar con {plan.nombre}
               </a>
