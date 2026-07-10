@@ -90,7 +90,7 @@ export default function ServiciosPage() {
       >
         <div className="mx-auto max-w-xl">
           <h2 className="text-2xl font-bold sm:text-3xl">
-            ¿Tenés dudas sobre qué incluye cada plan?
+            ¿Tienes dudas sobre qué incluye cada plan?
           </h2>
           <a
             href={whatsappHrefAgencia()}

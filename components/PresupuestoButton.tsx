@@ -47,10 +47,10 @@ export default function PresupuestoButton({
 
       <Modal open={open} onClose={() => setOpen(false)}>
         <h3 className="text-lg font-bold text-neutral-900">
-          Contanos sobre tu clínica
+          Cuéntanos sobre tu clínica
         </h3>
         <p className="mt-1 text-sm text-neutral-600">
-          Te escribimos por WhatsApp con una propuesta armada para vos, sin
+          Te escribimos por WhatsApp con una propuesta armada para ti, sin
           compromiso.
         </p>
         <form onSubmit={enviar} className="mt-5 space-y-4">

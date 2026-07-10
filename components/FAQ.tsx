@@ -18,7 +18,7 @@ const PREGUNTAS = [
   {
     pregunta: "¿Qué pasa si en algún momento dejo de pagar?",
     respuesta:
-      "El sitio se pausa, pero el dominio sigue siendo tuyo y te lo llevás. Sin ataduras ni letra chica.",
+      "El sitio se pausa, pero el dominio sigue siendo tuyo y te lo llevas. Sin ataduras ni letra chica.",
   },
   {
     pregunta: "Mi sobrino o un freelance me la puede hacer más barata",
@@ -28,7 +28,7 @@ const PREGUNTAS = [
   {
     pregunta: "¿Cuánto tarda en estar lista mi web?",
     respuesta:
-      "Entre 48 y 72 horas desde que confirmás, una vez que vimos la demo juntos y estás de acuerdo con el diseño.",
+      "Entre 48 y 72 horas desde que confirmas, una vez que vimos la demo juntos y estás de acuerdo con el diseño.",
   },
 ];
 

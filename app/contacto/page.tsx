@@ -6,7 +6,7 @@ import { AGENCIA, whatsappHrefAgencia } from "@/lib/agency";
 export const metadata = {
   title: `Contacto · ${AGENCIA.nombre}`,
   description:
-    "Escribinos por WhatsApp o email y te armamos una demo real de tu clínica sin compromiso.",
+    "Escríbenos por WhatsApp o email y te armamos una demo real de tu clínica sin compromiso.",
 };
 
 export default function ContactoPage() {
@@ -15,7 +15,7 @@ export default function ContactoPage() {
       <PageHero
         eyebrow="Contacto"
         titulo="Hablemos de tu clínica"
-        descripcion="Contanos el nombre de tu clínica y la ciudad, y te devolvemos una propuesta armada con tus datos reales."
+        descripcion="Cuéntanos el nombre de tu clínica y la ciudad, y te devolvemos una propuesta armada con tus datos reales."
       />
 
       <section className="px-6 py-16 md:py-24">
@@ -62,7 +62,7 @@ export default function ContactoPage() {
               </div>
               <h3 className="mt-4 font-semibold text-neutral-900">Email</h3>
               <p className="mt-2 text-sm text-neutral-600">
-                Si preferís algo más formal, escribinos a {AGENCIA.email}.
+                Si prefieres algo más formal, escríbenos a {AGENCIA.email}.
               </p>
               <p
                 className="mt-4 text-sm font-semibold"

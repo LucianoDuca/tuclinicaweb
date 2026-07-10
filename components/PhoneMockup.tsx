@@ -25,7 +25,7 @@ export default function PhoneMockup() {
             className="max-w-[80%] self-end rounded-lg rounded-tr-none px-3 py-2 text-[11px] text-neutral-800 shadow-sm"
             style={{ backgroundColor: "#DCF8C6" }}
           >
-            Dale, mostrame 🙌
+            Vale, muéstramela 🙌
           </div>
           <div className="max-w-[80%] self-start rounded-lg rounded-tl-none bg-white px-3 py-2 text-[11px] text-neutral-700 shadow-sm">
             sonrisalud-demo.onrender.com ✨

@@ -8,7 +8,7 @@ export const AGENCIA = {
     primario: "#123A5C",
     acento: "#FF6B4A",
   },
-  demoUrl: "https://sonrisalud-demo.vercel.app",
+  demoUrl: "https://sonrisalud-demo.onrender.com",
 };
 
 export function whatsappHrefAgencia(): string {

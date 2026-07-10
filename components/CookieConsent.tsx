@@ -31,7 +31,7 @@ export default function CookieConsent() {
   return (
     <div className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-xl rounded-2xl border border-neutral-200 bg-white p-5 shadow-2xl sm:inset-x-auto sm:right-6 sm:left-auto">
       <p className="text-sm text-neutral-600">
-        Usamos cookies técnicas y analíticas para mejorar tu experiencia. Podés
+        Usamos cookies técnicas y analíticas para mejorar tu experiencia. Puedes
         leer más en nuestra{" "}
         <Link href="/cookies" className="font-medium text-neutral-900 underline">
           política de cookies

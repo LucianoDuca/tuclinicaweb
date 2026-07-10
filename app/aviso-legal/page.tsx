@@ -22,9 +22,10 @@ export default function AvisoLegalPage() {
             Datos identificativos
           </h2>
           <p className="mt-2">
-            Titular: {AGENCIA.nombre}
+            Titular: Luciano Duca, bajo el nombre comercial {AGENCIA.nombre}
             <br />
-            NIF/CIF: [pendiente de completar — encuadre fiscal en trámite]
+            Identificación fiscal: en proceso de alta, se publicará en cuanto
+            esté disponible
             <br />
             Contacto: {AGENCIA.email}
           </p>

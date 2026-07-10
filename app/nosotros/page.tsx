@@ -53,13 +53,15 @@ export default function NosotrosPage() {
               Fundador y desarrollador
             </p>
             <p className="mt-3 text-neutral-600">
-              Soy desarrollador web y me ocupo personalmente de cada clínica
-              que trabaja con nosotros, del diseño al soporte. Antes de
-              enfocarme en el rubro dental construí sistemas a medida —desde
-              una web con roles de usuario y gestión multi-idioma hasta un
-              punto de venta para comercios— y esa experiencia es la que hoy
-              uso para que la web de tu clínica funcione de verdad, no solo
-              se vea bien.
+              Me ocupo personalmente de cada clínica que trabaja con
+              nosotros, del primer boceto al soporte del día a día. Antes de
+              dedicarme a las clínicas dentales ayudé a otros negocios a
+              resolver problemas reales con su presencia online: desde
+              ordenar la gestión de cientos de familias en un centro
+              educativo, hasta modernizar la forma en que un comercio atiende
+              a sus clientes. Esa experiencia es la que hoy pongo al
+              servicio de tu clínica: no vendo una plantilla bonita,
+              resuelvo que consigas más pacientes.
             </p>
             <p className="mt-3 text-neutral-600">
               La idea de ClinicaWeb nace de algo simple: hay clínicas con
@@ -98,7 +100,7 @@ export default function NosotrosPage() {
             className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
             style={{ backgroundColor: AGENCIA.colores.primario }}
           >
-            Escribime por WhatsApp
+            Escríbeme por WhatsApp
           </a>
         </div>
       </section>

@@ -21,7 +21,7 @@ export default function CalculadoraROI() {
             className="text-sm font-semibold tracking-wide uppercase"
             style={{ color: AGENCIA.colores.primario }}
           >
-            Hacé la cuenta vos mismo
+            Haz la cuenta tú mismo
           </p>
           <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
             ¿Cuánto te tiene que traer la web para que valga la pena?
