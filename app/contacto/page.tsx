@@ -75,8 +75,15 @@ export default function ContactoPage() {
         </Reveal>
 
         <div className="mx-auto mt-12 max-w-2xl rounded-2xl bg-neutral-50 p-6 text-center text-sm text-neutral-600">
-          Sin compromiso: te armamos la propuesta con tus datos reales antes
-          de que decidas nada. Recién cobramos si te gusta el resultado.
+          <p>
+            Sin compromiso: te armamos la propuesta con tus datos reales
+            antes de que decidas nada. Solo cobramos si te gusta el
+            resultado.
+          </p>
+          <p className="mt-3 font-medium text-neutral-700">
+            Horario de atención: lunes a viernes, 9:00–18:00 (hora de
+            España)
+          </p>
         </div>
       </section>
     </>

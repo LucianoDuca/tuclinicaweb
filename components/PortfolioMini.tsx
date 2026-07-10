@@ -34,7 +34,9 @@ export default function PortfolioMini() {
             <p className="truncate text-sm font-semibold text-neutral-900">
               {demo.nombre}
             </p>
-            <p className="text-xs text-neutral-500">{demo.ciudad} · ver demo ↗</p>
+            <p className="text-xs text-neutral-500">
+              {demo.ciudad} · demo de muestra ↗
+            </p>
           </div>
         </a>
       ))}

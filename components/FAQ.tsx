@@ -46,7 +46,7 @@ export default function FAQ() {
             Preguntas frecuentes
           </p>
           <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Dudas que ya nos hicieron otras clínicas
+            Resolvemos tus dudas antes de empezar
           </h2>
         </div>
 

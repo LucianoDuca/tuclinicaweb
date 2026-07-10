@@ -25,9 +25,9 @@ export default function Hero() {
           {AGENCIA.eslogan}
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-white/85">
-          Prospectamos, diseñamos y mantenemos la web de tu clínica por una
-          cuota mensual fija. Sin sorpresas, sin permanencia, y con la
-          primera demo hecha antes de que decidas nada.
+          Diseñamos, publicamos y mantenemos la web de tu clínica por una
+          cuota mensual fija, sin permanencia. Y lo mejor: ves tu web
+          terminada, con tus datos reales, antes de invertir un solo euro.
         </p>
 
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">

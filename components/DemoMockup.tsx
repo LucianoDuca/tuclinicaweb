@@ -47,7 +47,7 @@ function HeroSlice() {
         <span className="text-amber-300">
           <StarRow />
         </span>
-        <span>4.8 · 4 reseñas en Google</span>
+        <span>4,8 · 47 reseñas en Google</span>
       </div>
     </div>
   );
@@ -94,9 +94,10 @@ function CtaBar() {
       href={AGENCIA.demoUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center gap-2 bg-neutral-900 py-3 text-sm font-semibold text-white transition hover:bg-neutral-800"
+      className="flex items-center justify-center gap-2 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+      style={{ backgroundColor: AGENCIA.colores.primario }}
     >
-      Ver esta demo funcionando de verdad ↗
+      Abrir la demo completa en tu navegador ↗
     </a>
   );
 }
@@ -117,7 +118,7 @@ export default function DemoMockup() {
           </BrowserFrame>
         </button>
         <p className="mt-3 text-center text-xs text-neutral-400">
-          Click para ver más secciones de esta demo ↑
+          Haz clic para recorrer más secciones de esta demo ↑
         </p>
       </div>
 

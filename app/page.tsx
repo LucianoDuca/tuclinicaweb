@@ -2,6 +2,7 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import ConfianzaBadges from "@/components/ConfianzaBadges";
 import DemoMockup from "@/components/DemoMockup";
+import Garantia from "@/components/Garantia";
 import PortfolioMini from "@/components/PortfolioMini";
 import Reveal from "@/components/Reveal";
 import { AGENCIA } from "@/lib/agency";
@@ -18,7 +19,7 @@ export default function Home() {
             className="text-sm font-semibold tracking-wide uppercase"
             style={{ color: AGENCIA.colores.primario }}
           >
-            Trabajo real, no una maqueta
+            Compruébalo tú mismo
           </p>
           <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
             Así queda una clínica con nosotros
@@ -31,11 +32,13 @@ export default function Home() {
 
         <Reveal delay={250}>
           <p className="mx-auto mt-14 max-w-3xl text-center text-sm font-semibold tracking-wide text-neutral-500 uppercase">
-            Más ejemplos
+            Demos de muestra
           </p>
           <PortfolioMini />
         </Reveal>
       </section>
+
+      <Garantia />
 
       <section className="px-6 py-16 text-center md:py-20">
         <Reveal className="mx-auto max-w-2xl">
@@ -43,8 +46,9 @@ export default function Home() {
             ¿Quieres ver cómo quedaría la web de tu propia clínica?
           </h2>
           <p className="mt-3 text-neutral-600">
-            Mira qué incluye cada plan y escríbenos para que te armemos una
-            propuesta con tus datos reales, sin compromiso.
+            Pide tu demo gratuita hoy: la preparamos con el nombre, las
+            reseñas y los datos reales de tu clínica, y la ves funcionando
+            antes de decidir nada.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link

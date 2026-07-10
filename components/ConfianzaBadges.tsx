@@ -61,7 +61,9 @@ function ChatIcon({ className, style }: { className?: string; style?: React.CSSP
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className={className} style={style}>
       <path d="M21 11.5a8.38 8.38 0 0 1-8.9 8.4A8.5 8.5 0 1 1 21 11.5Z" />
-      <path d="M8 12h.01M12 12h.01M16 12h.01" />
+      <circle cx="8" cy="11.5" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="11.5" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="16" cy="11.5" r="1.1" fill="currentColor" stroke="none" />
     </svg>
   );
 }

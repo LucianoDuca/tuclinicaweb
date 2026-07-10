@@ -70,14 +70,16 @@ export default function Precios() {
               <h3 className="text-lg font-semibold text-neutral-900">
                 {plan.nombre}
               </h3>
-              <p className="mt-4">
+              <p className="mt-4 text-xs font-medium tracking-wide text-neutral-500 uppercase">
+                Inversión inicial
+              </p>
+              <p>
                 <span className="text-3xl font-bold text-neutral-900">
                   {plan.setup} €
                 </span>
-                <span className="text-sm text-neutral-500"> de alta</span>
               </p>
               <p className="text-neutral-600">
-                + {plan.mensual} €<span className="text-sm">/mes</span>
+                + {plan.mensual} €<span className="text-sm">/mes, todo incluido</span>
               </p>
 
               <ul className="mt-6 space-y-3 text-sm text-neutral-600">

@@ -48,7 +48,7 @@ export default function NosotrosPage() {
             </h2>
             <p
               className="text-sm font-medium"
-              style={{ color: AGENCIA.colores.acento }}
+              style={{ color: AGENCIA.colores.primario }}
             >
               Fundador y desarrollador
             </p>

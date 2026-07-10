@@ -16,7 +16,7 @@ export default function PreciosPage() {
       <PageHero
         eyebrow="Precios"
         titulo="Una cuota fija, sin sorpresas y sin permanencia"
-        descripcion="El pago inicial cubre el diseño de tu web. La cuota mensual incluye hosting, dominio y mantenimiento."
+        descripcion="La inversión inicial cubre el diseño completo de tu web. La cuota mensual lo incluye todo: hosting, dominio, mantenimiento y cambios."
       />
       <Precios />
       <CalculadoraROI />

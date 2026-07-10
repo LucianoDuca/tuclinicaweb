@@ -24,7 +24,7 @@ export default function CalculadoraROI() {
             Haz la cuenta tú mismo
           </p>
           <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
-            ¿Cuánto te tiene que traer la web para que valga la pena?
+            Tu web no es un gasto: es una inversión. Haz la cuenta.
           </h2>
         </div>
 
@@ -72,7 +72,7 @@ export default function CalculadoraROI() {
 
           <div
             className="mt-8 rounded-xl p-6 text-center text-white"
-            style={{ backgroundImage: AGENCIA.degradeRaro }}
+            style={{ backgroundColor: AGENCIA.colores.primario }}
           >
             <p className="text-sm text-white/80">
               Con eso, tu web te generaría aproximadamente
@@ -81,8 +81,8 @@ export default function CalculadoraROI() {
               {ingresoMensual.toLocaleString("es-ES")} € / mes
             </p>
             <p className="mt-2 text-sm text-white/85">
-              El plan Profesional (29 €/mes) sería{" "}
-              <strong>{veces.toFixed(0)}x</strong> más barato que eso.
+              Tu inversión de 29 €/mes se recuperaría{" "}
+              <strong>{veces.toFixed(0)} veces</strong> cada mes.
             </p>
           </div>
           <p className="mt-4 text-center text-xs text-neutral-400">
