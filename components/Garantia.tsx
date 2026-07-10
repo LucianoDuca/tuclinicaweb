@@ -35,14 +35,17 @@ export default function Garantia() {
         <div className="mx-auto max-w-2xl text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
-            style={{ color: AGENCIA.colores.primario }}
+            style={{ color: AGENCIA.colores.acento }}
           >
             Por qué es una decisión segura
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
+          <h2
+            className="mt-2 text-3xl font-bold sm:text-4xl"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             Nuestro compromiso, sin letra chica
           </h2>
-          <p className="mt-3 text-neutral-600">
+          <p className="mt-3 text-slate-600">
             Cuando un paciente busca «dentista» en tu ciudad, o te encuentra
             a ti… o encuentra a otra clínica. Nosotros nos encargamos de que
             te encuentre a ti — y asumimos el riesgo para que probarlo no te
@@ -50,20 +53,28 @@ export default function Garantia() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {COMPROMISOS.map((item) => (
             <div
               key={item.titulo}
-              className="rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-2xl border border-white/70 bg-white/60 p-6 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_18px_50px_-24px_rgba(15,76,117,0.4)]"
             >
               <div
-                className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-white"
-                style={{ backgroundImage: AGENCIA.degradeRaro }}
+                className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
+                style={{
+                  backgroundColor: `${AGENCIA.colores.acento}18`,
+                  color: AGENCIA.colores.acento,
+                }}
               >
                 <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="font-semibold text-neutral-900">{item.titulo}</h3>
-              <p className="mt-2 text-sm text-neutral-600">
+              <h3
+                className="font-semibold"
+                style={{ color: AGENCIA.colores.tinta }}
+              >
+                {item.titulo}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
                 {item.descripcion}
               </p>
             </div>

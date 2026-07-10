@@ -19,23 +19,26 @@ export default function CalculadoraROI() {
         <div className="text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
-            style={{ color: AGENCIA.colores.primario }}
+            style={{ color: AGENCIA.colores.acento }}
           >
             Haz la cuenta tú mismo
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
+          <h2
+            className="mt-2 text-3xl font-bold sm:text-4xl"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             Tu web no es un gasto: es una inversión. Haz la cuenta.
           </h2>
         </div>
 
-        <div className="mt-10 rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm sm:p-10">
+        <div className="mt-10 rounded-3xl border border-white/70 bg-white/60 p-6 shadow-[0_24px_70px_-30px_rgba(15,76,117,0.4)] backdrop-blur-md sm:p-10">
           <div className="grid gap-8 sm:grid-cols-2">
             <div>
               <div className="flex items-baseline justify-between">
-                <label className="text-sm font-medium text-neutral-700">
+                <label className="text-sm font-medium text-slate-700">
                   Pacientes nuevos por mes
                 </label>
-                <span className="text-lg font-bold text-neutral-900">
+                <span className="text-lg font-bold text-slate-900">
                   {pacientes}
                 </span>
               </div>
@@ -45,16 +48,16 @@ export default function CalculadoraROI() {
                 max={10}
                 value={pacientes}
                 onChange={(e) => setPacientes(Number(e.target.value))}
-                className="mt-3 w-full accent-[#123A5C]"
+                className="mt-3 w-full accent-[#0EA5B7]"
               />
             </div>
 
             <div>
               <div className="flex items-baseline justify-between">
-                <label className="text-sm font-medium text-neutral-700">
+                <label className="text-sm font-medium text-slate-700">
                   Ticket promedio por paciente
                 </label>
-                <span className="text-lg font-bold text-neutral-900">
+                <span className="text-lg font-bold text-slate-900">
                   {ticket} €
                 </span>
               </div>
@@ -65,7 +68,7 @@ export default function CalculadoraROI() {
                 step={25}
                 value={ticket}
                 onChange={(e) => setTicket(Number(e.target.value))}
-                className="mt-3 w-full accent-[#123A5C]"
+                className="mt-3 w-full accent-[#0EA5B7]"
               />
             </div>
           </div>
@@ -85,8 +88,8 @@ export default function CalculadoraROI() {
               <strong>{veces.toFixed(0)} veces</strong> cada mes.
             </p>
           </div>
-          <p className="mt-4 text-center text-xs text-neutral-400">
-            Cálculo orientativo, ajustá los valores según tu clínica.
+          <p className="mt-4 text-center text-xs text-slate-400">
+            Cálculo orientativo, ajusta los valores según tu clínica.
           </p>
         </div>
       </Reveal>

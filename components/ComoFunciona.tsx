@@ -29,11 +29,14 @@ export default function ComoFunciona() {
         <div className="mx-auto max-w-2xl text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
-            style={{ color: AGENCIA.colores.primario }}
+            style={{ color: AGENCIA.colores.acento }}
           >
             Cómo funciona
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
+          <h2
+            className="mt-2 text-3xl font-bold sm:text-4xl"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             De cero a tu web funcionando, sin vueltas
           </h2>
         </div>
@@ -42,13 +45,18 @@ export default function ComoFunciona() {
           {PASOS.map((paso, i) => (
             <Reveal key={paso.numero} delay={i * 120} className="text-center">
               <div
-                className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white"
-                style={{ backgroundImage: AGENCIA.degradeRaro }}
+                className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full text-lg font-bold text-white shadow-[0_10px_28px_-10px_rgba(15,76,117,0.6)]"
+                style={{ backgroundColor: AGENCIA.colores.primario }}
               >
                 {paso.numero}
               </div>
-              <h3 className="font-semibold text-neutral-900">{paso.titulo}</h3>
-              <p className="mt-2 text-sm text-neutral-600">
+              <h3
+                className="font-semibold"
+                style={{ color: AGENCIA.colores.tinta }}
+              >
+                {paso.titulo}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
                 {paso.descripcion}
               </p>
             </Reveal>

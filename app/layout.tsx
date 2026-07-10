@@ -37,7 +37,17 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="relative min-h-full flex flex-col">
+        {/* Aurora decorativa de fondo: da profundidad para que el vidrio se lea como vidrio */}
+        <div
+          aria-hidden
+          className="pointer-events-none fixed inset-0 -z-10"
+          style={{
+            backgroundColor: "#F4F8FB",
+            backgroundImage:
+              "radial-gradient(60% 40% at 15% 0%, rgba(14,165,183,0.14), transparent 60%), radial-gradient(50% 45% at 100% 10%, rgba(15,76,117,0.12), transparent 55%), radial-gradient(45% 40% at 50% 100%, rgba(14,165,183,0.10), transparent 60%)",
+          }}
+        />
         <Header />
         <div className="flex flex-1 flex-col">{children}</div>
         <Footer />

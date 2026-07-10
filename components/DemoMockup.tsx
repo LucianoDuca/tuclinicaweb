@@ -6,7 +6,7 @@ import Modal from "@/components/Modal";
 
 function BrowserFrame({ children }: { children: React.ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-2xl shadow-neutral-300/50">
+    <div className="overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_30px_80px_-30px_rgba(15,76,117,0.45)]">
       <div className="flex items-center gap-2 border-b border-neutral-200 bg-neutral-50 px-4 py-3">
         <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
         <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
@@ -117,13 +117,13 @@ export default function DemoMockup() {
             <ServiciosSlice />
           </BrowserFrame>
         </button>
-        <p className="mt-3 text-center text-xs text-neutral-400">
+        <p className="mt-3 text-center text-xs text-slate-400">
           Haz clic para recorrer más secciones de esta demo ↑
         </p>
       </div>
 
-      <Modal open={open} onClose={() => setOpen(false)}>
-        <p className="mb-4 text-xs font-semibold tracking-wide text-neutral-400 uppercase">
+      <Modal open={open} onClose={() => setOpen(false)} maxWidth="max-w-2xl">
+        <p className="mb-4 text-xs font-semibold tracking-wide text-slate-400 uppercase">
           Recorrido de la demo
         </p>
         <BrowserFrame>

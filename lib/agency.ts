@@ -5,15 +5,17 @@ export const AGENCIA = {
   whatsapp: "5492615368176",
   whatsappMensaje: "Hola, quiero información sobre las webs para clínicas",
   colores: {
-    primario: "#123A5C",
-    acento: "#FF6B4A",
-    degradeInicio: "#3B82F6",
-    degradeMedio: "#E9439A",
-    degradeFin: "#FACC15",
+    primario: "#0F4C75", // navy-teal profundo (confianza, clínico)
+    acento: "#0EA5B7", // cian-teal fresco (limpieza, salud)
+    fondo: "#F4F8FB", // blanco cálido suave
+    tinta: "#0C2A3A", // tinta para titulares
   },
-  degradeRaro: "linear-gradient(135deg, #3B82F6 0%, #E9439A 55%, #FACC15 100%)",
   demoUrl: "https://sonrisalud-demo.onrender.com",
 };
+
+// Tarjeta de vidrio esmerilado reutilizable en todo el sitio.
+export const GLASS =
+  "rounded-2xl border border-white/70 bg-white/70 backdrop-blur-md shadow-[0_16px_50px_-20px_rgba(15,76,117,0.28)]";
 
 export function whatsappHrefAgencia(): string {
   const mensaje = encodeURIComponent(AGENCIA.whatsappMensaje);

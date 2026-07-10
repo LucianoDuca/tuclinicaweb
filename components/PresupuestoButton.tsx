@@ -21,8 +21,8 @@ export default function PresupuestoButton({
     "inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold transition active:scale-95";
   const style =
     variant === "solid"
-      ? "text-white shadow-lg hover:opacity-90"
-      : "border border-white/50 text-white hover:bg-white/10";
+      ? "text-white shadow-[0_10px_30px_-8px_rgba(15,76,117,0.6)] hover:brightness-110"
+      : "border border-white/70 bg-white/60 text-[#0F4C75] backdrop-blur-md hover:bg-white/80";
 
   function enviar(e: React.FormEvent) {
     e.preventDefault();
@@ -39,7 +39,9 @@ export default function PresupuestoButton({
         onClick={() => setOpen(true)}
         className={`${base} ${style} ${className ?? ""}`}
         style={
-          variant === "solid" ? { backgroundImage: AGENCIA.degradeRaro } : undefined
+          variant === "solid"
+            ? { backgroundColor: AGENCIA.colores.primario }
+            : undefined
         }
       >
         {children}
@@ -78,8 +80,8 @@ export default function PresupuestoButton({
           </div>
           <button
             type="submit"
-            className="w-full rounded-full py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
-            style={{ backgroundImage: AGENCIA.degradeRaro }}
+            className="w-full rounded-full py-3 font-semibold text-white shadow-lg transition hover:brightness-110 active:scale-95"
+            style={{ backgroundColor: AGENCIA.colores.primario }}
           >
             Continuar por WhatsApp
           </button>

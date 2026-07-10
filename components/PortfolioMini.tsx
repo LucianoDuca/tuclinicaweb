@@ -22,19 +22,19 @@ export default function PortfolioMini() {
           href={demo.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex items-center gap-4 rounded-xl border border-neutral-200 bg-white p-4 transition hover:-translate-y-0.5 hover:shadow-md"
+          className="group flex items-center gap-4 rounded-2xl border border-white/70 bg-white/60 p-4 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80 hover:shadow-[0_16px_40px_-20px_rgba(15,76,117,0.35)]"
         >
           <div
-            className="h-12 w-12 shrink-0 rounded-lg"
+            className="h-12 w-12 shrink-0 rounded-xl ring-1 ring-white/60"
             style={{
               background: `linear-gradient(135deg, ${demo.colores.primario}, ${demo.colores.acento})`,
             }}
           />
           <div className="min-w-0">
-            <p className="truncate text-sm font-semibold text-neutral-900">
+            <p className="truncate text-sm font-semibold text-slate-800">
               {demo.nombre}
             </p>
-            <p className="text-xs text-neutral-500">
+            <p className="text-xs text-slate-500">
               {demo.ciudad} · demo de muestra ↗
             </p>
           </div>

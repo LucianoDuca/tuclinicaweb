@@ -62,17 +62,23 @@ export default function ServiciosPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {INCLUIDO.map((item, i) => (
               <Reveal key={item.titulo} delay={i * 80}>
-                <div className="h-full rounded-2xl border border-neutral-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                <div className="h-full rounded-2xl border border-white/70 bg-white/60 p-6 backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/80 hover:shadow-[0_18px_50px_-24px_rgba(15,76,117,0.4)]">
                   <div
-                    className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-white"
-                    style={{ backgroundImage: AGENCIA.degradeRaro }}
+                    className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl"
+                    style={{
+                      backgroundColor: `${AGENCIA.colores.acento}18`,
+                      color: AGENCIA.colores.acento,
+                    }}
                   >
                     <item.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-semibold text-neutral-900">
+                  <h3
+                    className="font-semibold"
+                    style={{ color: AGENCIA.colores.tinta }}
+                  >
                     {item.titulo}
                   </h3>
-                  <p className="mt-2 text-sm text-neutral-600">
+                  <p className="mt-2 text-sm text-slate-600">
                     {item.descripcion}
                   </p>
                 </div>
@@ -84,19 +90,24 @@ export default function ServiciosPage() {
 
       <ComoFunciona />
 
-      <section
-        className="px-6 py-16 text-center text-white md:py-20"
-        style={{ backgroundColor: AGENCIA.colores.primario }}
-      >
-        <div className="mx-auto max-w-xl">
+      <section className="px-6 py-16 md:py-24">
+        <div
+          className="mx-auto max-w-3xl overflow-hidden rounded-3xl px-6 py-14 text-center text-white shadow-[0_30px_80px_-30px_rgba(15,76,117,0.7)]"
+          style={{
+            background: `linear-gradient(135deg, ${AGENCIA.colores.primario} 0%, #0A3350 100%)`,
+          }}
+        >
           <h2 className="text-2xl font-bold sm:text-3xl">
             ¿Tienes dudas sobre qué incluye cada plan?
           </h2>
+          <p className="mx-auto mt-3 max-w-md text-white/70">
+            Escríbenos y te lo explicamos sin tecnicismos, en dos minutos.
+          </p>
           <a
             href={whatsappHrefAgencia()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-6 py-3 font-semibold shadow-lg transition hover:scale-[1.02] active:scale-95"
+            className="mt-7 inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 font-semibold shadow-lg transition hover:scale-[1.02] active:scale-95"
             style={{ color: AGENCIA.colores.primario }}
           >
             Preguntar por WhatsApp

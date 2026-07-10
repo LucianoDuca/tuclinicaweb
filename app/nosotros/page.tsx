@@ -43,16 +43,19 @@ export default function NosotrosPage() {
             style={{ boxShadow: `0 0 0 4px ${AGENCIA.colores.primario}22` }}
           />
           <div>
-            <h2 className="text-xl font-bold text-neutral-900">
+            <h2
+              className="text-xl font-bold"
+              style={{ color: AGENCIA.colores.tinta }}
+            >
               Luciano Duca
             </h2>
             <p
               className="text-sm font-medium"
-              style={{ color: AGENCIA.colores.primario }}
+              style={{ color: AGENCIA.colores.acento }}
             >
               Fundador y desarrollador
             </p>
-            <p className="mt-3 text-neutral-600">
+            <p className="mt-3 text-slate-600">
               Me ocupo personalmente de cada clínica que trabaja con
               nosotros, del primer boceto al soporte del día a día. Antes de
               dedicarme a las clínicas dentales ayudé a otros negocios a
@@ -63,7 +66,7 @@ export default function NosotrosPage() {
               servicio de tu clínica: no vendo una plantilla bonita,
               resuelvo que consigas más pacientes.
             </p>
-            <p className="mt-3 text-neutral-600">
+            <p className="mt-3 text-slate-600">
               La idea de ClinicaWeb nace de algo simple: hay clínicas con
               pacientes reales y buenas reseñas que todavía no tienen una web
               a la altura. Mi trabajo es cerrar esa brecha, una clínica a la
@@ -73,17 +76,23 @@ export default function NosotrosPage() {
         </Reveal>
 
         <div className="mx-auto mt-16 max-w-5xl">
-          <h3 className="text-center text-lg font-semibold text-neutral-900">
+          <h3
+            className="text-center text-lg font-semibold"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             Cómo trabajamos
           </h3>
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {VALORES.map((valor, i) => (
               <Reveal key={valor.titulo} delay={i * 100}>
-                <div className="h-full rounded-2xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition hover:-translate-y-1">
-                  <h4 className="font-semibold text-neutral-900">
+                <div className="h-full rounded-2xl border border-white/70 bg-white/60 p-6 text-center backdrop-blur-md transition hover:-translate-y-1 hover:bg-white/80">
+                  <h4
+                    className="font-semibold"
+                    style={{ color: AGENCIA.colores.tinta }}
+                  >
                     {valor.titulo}
                   </h4>
-                  <p className="mt-2 text-sm text-neutral-600">
+                  <p className="mt-2 text-sm text-slate-600">
                     {valor.descripcion}
                   </p>
                 </div>
@@ -97,8 +106,8 @@ export default function NosotrosPage() {
             href={whatsappHrefAgencia()}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full px-6 py-3 font-semibold text-white shadow-lg transition hover:opacity-90 active:scale-95"
-            style={{ backgroundImage: AGENCIA.degradeRaro }}
+            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold text-white shadow-[0_14px_40px_-12px_rgba(15,76,117,0.6)] transition hover:brightness-110 active:scale-95"
+            style={{ backgroundColor: AGENCIA.colores.primario }}
           >
             Escríbeme por WhatsApp
           </a>

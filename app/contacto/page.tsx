@@ -27,21 +27,24 @@ export default function ContactoPage() {
               href={whatsappHrefAgencia()}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
+              className="group rounded-2xl border border-white/70 bg-white/60 p-8 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80 hover:shadow-[0_20px_50px_-24px_rgba(15,76,117,0.4)] active:scale-[0.98]"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366]">
                 <WhatsAppIcon className="h-6 w-6" />
               </div>
-              <h3 className="mt-4 font-semibold text-neutral-900">
+              <h3
+                className="mt-4 font-semibold"
+                style={{ color: AGENCIA.colores.tinta }}
+              >
                 WhatsApp
               </h3>
-              <p className="mt-2 text-sm text-neutral-600">
+              <p className="mt-2 text-sm text-slate-600">
                 La forma más rápida de escribirnos. Solemos responder el
                 mismo día.
               </p>
               <p
                 className="mt-4 text-sm font-semibold"
-                style={{ color: AGENCIA.colores.primario }}
+                style={{ color: AGENCIA.colores.acento }}
               >
                 Abrir WhatsApp →
               </p>
@@ -49,24 +52,29 @@ export default function ContactoPage() {
 
             <a
               href={`mailto:${AGENCIA.email}`}
-              className="group rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98]"
+              className="group rounded-2xl border border-white/70 bg-white/60 p-8 backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/80 hover:shadow-[0_20px_50px_-24px_rgba(15,76,117,0.4)] active:scale-[0.98]"
             >
               <div
                 className="flex h-12 w-12 items-center justify-center rounded-xl"
                 style={{
-                  backgroundColor: `${AGENCIA.colores.primario}1A`,
-                  color: AGENCIA.colores.primario,
+                  backgroundColor: `${AGENCIA.colores.acento}18`,
+                  color: AGENCIA.colores.acento,
                 }}
               >
                 <MailIcon className="h-6 w-6" />
               </div>
-              <h3 className="mt-4 font-semibold text-neutral-900">Email</h3>
-              <p className="mt-2 text-sm text-neutral-600">
+              <h3
+                className="mt-4 font-semibold"
+                style={{ color: AGENCIA.colores.tinta }}
+              >
+                Email
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
                 Si prefieres algo más formal, escríbenos a {AGENCIA.email}.
               </p>
               <p
                 className="mt-4 text-sm font-semibold"
-                style={{ color: AGENCIA.colores.primario }}
+                style={{ color: AGENCIA.colores.acento }}
               >
                 Enviar email →
               </p>
@@ -74,13 +82,16 @@ export default function ContactoPage() {
           </div>
         </Reveal>
 
-        <div className="mx-auto mt-12 max-w-2xl rounded-2xl bg-neutral-50 p-6 text-center text-sm text-neutral-600">
+        <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-white/70 bg-white/50 p-6 text-center text-sm text-slate-600 backdrop-blur-md">
           <p>
             Sin compromiso: te armamos la propuesta con tus datos reales
             antes de que decidas nada. Solo cobramos si te gusta el
             resultado.
           </p>
-          <p className="mt-3 font-medium text-neutral-700">
+          <p
+            className="mt-3 font-medium"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             Horario de atención: lunes a viernes, 9:00–18:00 (hora de
             España)
           </p>

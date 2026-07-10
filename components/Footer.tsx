@@ -4,11 +4,14 @@ import { AGENCIA } from "@/lib/agency";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-800 bg-neutral-900 px-6 py-14 text-neutral-400">
+    <footer
+      className="px-6 py-14 text-white/60"
+      style={{ backgroundColor: "#0A2E44" }}
+    >
       <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 md:grid-cols-4">
         <div>
-          <Logo dark />
-          <p className="mt-3 max-w-xs text-sm text-neutral-400">
+          <Logo light />
+          <p className="mt-3 max-w-xs text-sm text-white/50">
             {AGENCIA.eslogan}
           </p>
         </div>
@@ -56,7 +59,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-neutral-800 pt-6 text-center text-xs text-neutral-500">
+      <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-center text-xs text-white/40">
         © {new Date().getFullYear()} {AGENCIA.nombre}. Todos los derechos
         reservados.
       </div>

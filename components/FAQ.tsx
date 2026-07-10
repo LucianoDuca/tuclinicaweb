@@ -41,33 +41,43 @@ export default function FAQ() {
         <div className="text-center">
           <p
             className="text-sm font-semibold tracking-wide uppercase"
-            style={{ color: AGENCIA.colores.primario }}
+            style={{ color: AGENCIA.colores.acento }}
           >
             Preguntas frecuentes
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
+          <h2
+            className="mt-2 text-3xl font-bold sm:text-4xl"
+            style={{ color: AGENCIA.colores.tinta }}
+          >
             Resolvemos tus dudas antes de empezar
           </h2>
         </div>
 
-        <div className="mt-10 divide-y divide-neutral-200 rounded-2xl border border-neutral-200 bg-white">
+        <div className="mt-10 divide-y divide-white/60 overflow-hidden rounded-3xl border border-white/70 bg-white/60 backdrop-blur-md">
           {PREGUNTAS.map((item, i) => (
             <div key={item.pregunta}>
               <button
                 onClick={() => setAbierta(abierta === i ? null : i)}
-                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition hover:bg-white/40"
               >
-                <span className="font-medium text-neutral-900">
+                <span
+                  className="font-medium"
+                  style={{ color: AGENCIA.colores.tinta }}
+                >
                   {item.pregunta}
                 </span>
                 <span
-                  className={`shrink-0 text-xl text-neutral-400 transition-transform ${abierta === i ? "rotate-45" : ""}`}
+                  className="shrink-0 text-xl transition-transform"
+                  style={{
+                    color: AGENCIA.colores.acento,
+                    transform: abierta === i ? "rotate(45deg)" : "none",
+                  }}
                 >
                   +
                 </span>
               </button>
               {abierta === i && (
-                <p className="px-6 pb-5 text-sm leading-relaxed text-neutral-600">
+                <p className="px-6 pb-5 text-sm leading-relaxed text-slate-600">
                   {item.respuesta}
                 </p>
               )}

@@ -17,7 +17,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-neutral-200 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-white/60 bg-white/70 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/">
           <Logo />
@@ -36,7 +36,7 @@ export default function Header() {
                 {activo && (
                   <span
                     className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full"
-                    style={{ backgroundImage: AGENCIA.degradeRaro }}
+                    style={{ backgroundColor: AGENCIA.colores.acento }}
                   />
                 )}
               </Link>
@@ -47,7 +47,7 @@ export default function Header() {
           Pedir presupuesto
         </PresupuestoButton>
       </div>
-      <nav className="flex items-center justify-center gap-6 border-t border-neutral-100 px-6 py-2 text-xs font-medium text-neutral-600 md:hidden">
+      <nav className="flex items-center justify-center gap-6 border-t border-white/60 px-6 py-2 text-xs font-medium text-neutral-600 md:hidden">
         {NAV.map((item) => {
           const activo = pathname === item.href;
           return (

@@ -9,18 +9,23 @@ const BADGES = [
 
 export default function ConfianzaBadges() {
   return (
-    <section className="border-y border-neutral-200 bg-white px-6 py-8">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-4">
+    <section className="px-6 py-8">
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 rounded-3xl border border-white/70 bg-white/60 px-6 py-6 shadow-[0_16px_50px_-24px_rgba(15,76,117,0.3)] backdrop-blur-md sm:grid-cols-4">
         {BADGES.map((badge) => (
           <div
             key={badge.texto}
             className="flex flex-col items-center gap-2 text-center"
           >
-            <badge.icon
-              className="h-6 w-6"
-              style={{ color: AGENCIA.colores.primario }}
-            />
-            <p className="text-xs font-medium text-neutral-600 sm:text-sm">
+            <span
+              className="flex h-10 w-10 items-center justify-center rounded-xl"
+              style={{
+                backgroundColor: `${AGENCIA.colores.acento}18`,
+                color: AGENCIA.colores.acento,
+              }}
+            >
+              <badge.icon className="h-5 w-5" />
+            </span>
+            <p className="text-xs font-medium text-slate-600 sm:text-sm">
               {badge.texto}
             </p>
           </div>
