@@ -8,7 +8,15 @@ export default function Hero() {
         background: `linear-gradient(135deg, ${AGENCIA.colores.primario} 0%, ${AGENCIA.colores.primario} 60%, #0A2540 140%)`,
       }}
     >
-      <div className="mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, white 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+      <div className="relative mx-auto max-w-4xl px-6 py-20 text-center md:py-28">
         <p className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1 text-sm font-medium tracking-wide text-white/90">
           Para clínicas dentales de España
         </p>

@@ -45,23 +45,7 @@ export default function Precios() {
   return (
     <section id="precios" className="px-6 py-16 md:py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
-          <p
-            className="text-sm font-semibold tracking-wide uppercase"
-            style={{ color: AGENCIA.colores.primario }}
-          >
-            Precios
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-neutral-900 sm:text-3xl">
-            Una cuota fija al mes, sin permanencia
-          </h2>
-          <p className="mt-3 text-neutral-600">
-            El pago inicial cubre el diseño; la cuota mensual incluye
-            hosting, dominio y mantenimiento.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-3">
           {PLANES.map((plan) => (
             <div
               key={plan.nombre}

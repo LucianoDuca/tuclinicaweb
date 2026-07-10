@@ -1,25 +1,64 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { AGENCIA } from "@/lib/agency";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-neutral-900 px-6 py-10 text-neutral-400">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-sm sm:flex-row">
-        <p className="text-center sm:text-left">
-          © {new Date().getFullYear()} {AGENCIA.nombre}. Todos los derechos
-          reservados.
-        </p>
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          <Link href="/aviso-legal" className="hover:text-white">
-            Aviso legal
-          </Link>
-          <Link href="/privacidad" className="hover:text-white">
-            Política de privacidad
-          </Link>
-          <Link href="/cookies" className="hover:text-white">
-            Política de cookies
-          </Link>
-        </nav>
+    <footer className="border-t border-neutral-800 bg-neutral-900 px-6 py-14 text-neutral-400">
+      <div className="mx-auto grid max-w-6xl gap-10 sm:grid-cols-2 md:grid-cols-4">
+        <div>
+          <Logo dark />
+          <p className="mt-3 max-w-xs text-sm text-neutral-400">
+            {AGENCIA.eslogan}
+          </p>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-white">Navegación</p>
+          <nav className="mt-3 flex flex-col gap-2 text-sm">
+            <Link href="/servicios" className="hover:text-white">
+              Servicios
+            </Link>
+            <Link href="/precios" className="hover:text-white">
+              Precios
+            </Link>
+            <Link href="/nosotros" className="hover:text-white">
+              Nosotros
+            </Link>
+            <Link href="/contacto" className="hover:text-white">
+              Contacto
+            </Link>
+          </nav>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-white">Legal</p>
+          <nav className="mt-3 flex flex-col gap-2 text-sm">
+            <Link href="/aviso-legal" className="hover:text-white">
+              Aviso legal
+            </Link>
+            <Link href="/privacidad" className="hover:text-white">
+              Política de privacidad
+            </Link>
+            <Link href="/cookies" className="hover:text-white">
+              Política de cookies
+            </Link>
+          </nav>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold text-white">Contacto</p>
+          <div className="mt-3 flex flex-col gap-2 text-sm">
+            <a href={`mailto:${AGENCIA.email}`} className="hover:text-white">
+              {AGENCIA.email}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-10 max-w-6xl border-t border-neutral-800 pt-6 text-center text-xs text-neutral-500">
+        © {new Date().getFullYear()} {AGENCIA.nombre}. Todos los derechos
+        reservados.
       </div>
     </footer>
   );
