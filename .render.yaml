@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: tuclinicaweb
+    buildCommand: ""
+    staticPublishPath: ./
+    routes:
+      - path: /*
+        file: index.html
