@@ -6,6 +6,7 @@ import { updateYear } from './utils.js';
 import { setupModalEventListeners } from './modals.js';
 import { setupPresupuestoForm } from './forms.js';
 import { setupCookieBanner } from './cookies.js';
+import { setupPromoPopup } from './popup.js';
 import { setupReveal, setupActiveNavTracking } from './scroll.js';
 
 /**
@@ -16,6 +17,7 @@ function initialize() {
   setupModalEventListeners();
   setupPresupuestoForm();
   setupCookieBanner();
+  setupPromoPopup();
   setupReveal();
   setupActiveNavTracking();
 }
