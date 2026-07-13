@@ -109,7 +109,7 @@ main {
 footer {
   padding: var(--spacing-2xl) var(--spacing-lg);
   color: rgba(255,255,255,0.6);
-  background: #0A2E44;
+  background: #0D0D0D;
 }
 
 .footer-grid {

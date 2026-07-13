@@ -4,7 +4,8 @@
 
 const REVEAL_THRESHOLD = 0.15;
 const SCROLL_OFFSET = 100;
-const SECTIONS = ['servicios', 'precios', 'nosotros', 'contacto', 'demo'];
+// Ordered by their vertical position in the DOM so the "last passed" wins.
+const SECTIONS = ['servicios', 'demo', 'precios', 'nosotros', 'contacto'];
 
 export function setupReveal() {
   const observerOptions = {
