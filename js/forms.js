@@ -5,7 +5,7 @@
 import { encodeWhatsAppMessage, openWhatsAppChat } from './utils.js';
 import { closeModal } from './modals.js';
 
-const WHATSAPP_PHONE = '5492615368176';
+const WHATSAPP_PHONE = '5492617776907';
 
 export function setupPresupuestoForm() {
   const form = document.getElementById('presupuestoForm');
