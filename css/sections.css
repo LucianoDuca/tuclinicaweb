@@ -1,0 +1,213 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  margin-top: var(--spacing-md);
+}
+
+.hero h1 .accent {
+  color: var(--accent);
+}
+
+.hero-desc {
+  max-width: 42rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  color: var(--text-light);
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.25rem;
+}
+
+.hero-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Badges Section */
+.badges {
+  padding: 2rem var(--spacing-lg);
+}
+
+.badges-grid {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  border-radius: var(--radius-3xl);
+  padding: var(--spacing-lg);
+  box-shadow: 0 16px 50px -24px rgba(15,76,117,0.3);
+  backdrop-filter: blur(10px);
+}
+
+/* Demo Section */
+.demo-section {
+  padding: var(--spacing-lg);
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.demo-header {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.demo-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.demo-header h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: var(--spacing-sm);
+}
+
+.demo-mockup {
+  max-width: 48rem;
+  margin: 2.5rem auto 0;
+}
+
+.demo-portfolio {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.demo-portfolio-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.portfolio-grid {
+  max-width: 48rem;
+  margin: var(--spacing-md) auto 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Garantia Section */
+.garantia {
+  padding: var(--spacing-lg);
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.garantia-header {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+  animation: reveal 0.7s ease-out 0s both;
+}
+
+.garantia-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.garantia-header h2 {
+  margin-top: var(--spacing-sm);
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.garantia-desc {
+  margin-top: var(--spacing-sm);
+  color: var(--text-light);
+}
+
+.garantia-cards {
+  max-width: 80rem;
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.garantia-card:nth-child(1) { animation-delay: 0s; }
+.garantia-card:nth-child(2) { animation-delay: 0.1s; }
+.garantia-card:nth-child(3) { animation-delay: 0.2s; }
+.garantia-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* CTA Section */
+.cta-section {
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.cta-box {
+  max-width: 48rem;
+  margin: 0 auto;
+  border-radius: var(--radius-3xl);
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.6);
+  padding: 3.5rem var(--spacing-lg);
+  box-shadow: 0 24px 70px -30px rgba(15,76,117,0.4);
+  backdrop-filter: blur(20px);
+  animation: reveal 0.7s ease-out;
+}
+
+.cta-box h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cta-box p {
+  margin-top: var(--spacing-sm);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-light);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}

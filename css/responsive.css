@@ -1,0 +1,134 @@
+/* Responsive Design */
+
+/* Tablet and up */
+@media (min-width: 640px) {
+  nav.desktop {
+    display: flex;
+  }
+
+  nav.mobile {
+    display: none !important;
+  }
+
+  .hero-content {
+    padding-top: 7rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .badge-text {
+    font-size: 0.875rem;
+  }
+
+  .demo-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    padding: 2rem;
+  }
+
+  .cookie-banner {
+    bottom: var(--spacing-xl);
+    right: var(--spacing-xl);
+    left: auto;
+  }
+
+  .garantia-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .garantia-header h2 {
+    font-size: 2.25rem;
+  }
+
+  .cta-box h2 {
+    font-size: 1.875rem;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .whatsapp-btn {
+    right: var(--spacing-xl);
+    bottom: var(--spacing-xl);
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 768px) {
+  .hero-content {
+    padding-top: 7rem;
+  }
+
+  .hero h1 {
+    font-size: 3.75rem;
+  }
+
+  .demos-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .garantia {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .garantia-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cta-section {
+    padding-top: 4rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1024px) {
+  .garantia-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark mode (future support) */
+@media (prefers-color-scheme: dark) {
+  /* Placeholder for future dark mode implementation */
+}
