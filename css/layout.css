@@ -33,6 +33,13 @@ header {
   flex-shrink: 0;
 }
 
+.logo-img {
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
 nav.desktop {
   display: none;
   flex-direction: row;
