@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClinicaWeb — Webs para clínicas dentales que convierten búsquedas en citas</title>
+  <meta name="description" content="Diseñamos, publicamos y mantenemos la web de tu clínica dental por una cuota mensual fija, sin permanencia.">
+  <link rel="canonical" href="https://tuclinicaweb.com">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0F4C75;
+      --accent: #0EA5B7;
+      --bg: #F4F8FB;
+      --text: #0C2A3A;
+      --text-light: #475569;
+      --border-light: rgba(255,255,255,0.7);
+      --glass: rgba(255,255,255,0.6);
+      --glass-border: rgba(255,255,255,0.7);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      background-image:
+        radial-gradient(60% 40% at 15% 0%, rgba(14,165,183,0.14), transparent 60%),
+        radial-gradient(50% 45% at 100% 10%, rgba(15,76,117,0.12), transparent 55%),
+        radial-gradient(45% 40% at 50% 100%, rgba(14,165,183,0.10), transparent 60%);
+      z-index: -10;
+      pointer-events: none;
+    }
+
+    h1, h2, h3 {
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: white;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border-light);
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(20px);
+    }
+
+    .header-main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.01em;
+    }
+
+    .logo svg {
+      width: 2rem;
+      height: 2rem;
+      flex-shrink: 0;
+    }
+
+    nav.desktop {
+      display: none;
+      flex-direction: row;
+      align-items: center;
+      gap: 2rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    nav.desktop a {
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+
+    nav.desktop a:hover {
+      color: var(--text);
+    }
+
+    nav.desktop a.active {
+      color: var(--primary);
+    }
+
+    nav.desktop a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -0.25rem;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    @media (min-width: 768px) {
+      nav.desktop {
+        display: flex;
+      }
+      nav.mobile {
+        display: none !important;
+      }
+    }
+
+    .btn-presupuesto {
+      padding: 0.5rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background: var(--primary);
+      color: white;
+      border-radius: 9999px;
+      box-shadow: 0 14px 40px -12px rgba(15,76,117,0.6);
+      transition: filter 0.2s;
+    }
+
+    .btn-presupuesto:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-presupuesto:active {
+      transform: scale(0.95);
+    }
+
+    nav.mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      border-top: 1px solid var(--border-light);
+      padding: 0.5rem 1.5rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    nav.mobile a {
+      transition: color 0.2s;
+    }
+
+    nav.mobile a:hover {
+      color: var(--text);
+    }
+
+    nav.mobile a.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 56rem;
+      margin: 0 auto;
+      padding: 1.5rem;
+      padding-top: 5rem;
+      padding-bottom: 7rem;
+      text-align: center;
+    }
+
+    @media (min-width: 640px) {
+      .hero-content {
+        padding-top: 7rem;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      border-radius: 9999px;
+      padding: 0.375rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: inline-block;
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      font-size: 2.25rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 3.75rem;
+      }
+    }
+
+    .hero h1 .accent {
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      max-width: 42rem;
+      margin: 1.5rem auto 0;
+      font-size: 1.125rem;
+      color: var(--text-light);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      padding: 0.875rem 1.75rem;
+      font-weight: 600;
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 14px 40px -12px rgba(15,76,117,0.6);
+      transition: filter 0.2s;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .btn-primary:active {
+      transform: scale(0.95);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      padding: 0.875rem 1.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      backdrop-filter: blur(10px);
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.8);
+    }
+
+    .btn-secondary:active {
+      transform: scale(0.95);
+    }
+
+    .hero-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: #64748b;
+    }
+
+    .stars {
+      display: flex;
+      color: #fbbf24;
+    }
+
+    .stars svg {
+      width: 1rem;
+      height: 1rem;
+      fill: currentColor;
+    }
+
+    /* Badges Section */
+    .badges {
+      padding: 2rem 1.5rem;
+    }
+
+    .badges-grid {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      box-shadow: 0 16px 50px -24px rgba(15,76,117,0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    @media (min-width: 640px) {
+      .badges-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .badge-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-align: center;
+    }
+
+    .badge-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.75rem;
+      background: rgba(14,165,183,0.09);
+      color: var(--accent);
+    }
+
+    .badge-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    .badge-text {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    @media (min-width: 640px) {
+      .badge-text {
+        font-size: 0.875rem;
+      }
+    }
+
+    /* Demo Section */
+    .demo-section {
+      padding: 1.5rem;
+      padding-top: 4rem;
+      padding-bottom: 6rem;
+    }
+
+    .demo-header {
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .demo-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .demo-header h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 0.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .demo-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .demo-mockup {
+      max-width: 48rem;
+      margin: 2.5rem auto 0;
+    }
+
+    .browser-frame {
+      overflow: hidden;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-light);
+      background: white;
+      box-shadow: 0 30px 80px -30px rgba(15,76,117,0.45);
+    }
+
+    .browser-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid #e5e7eb;
+      background: #f9fafb;
+      padding: 1rem;
+    }
+
+    .browser-dot {
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+    }
+
+    .browser-dot.red { background: #FF5F57; }
+    .browser-dot.yellow { background: #FEBC2E; }
+    .browser-dot.green { background: #28C840; }
+
+    .browser-url {
+      flex: 1;
+      border-radius: 0.375rem;
+      background: white;
+      padding: 0.25rem 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      border: 1px solid #e5e7eb;
+      margin-left: 0.75rem;
+    }
+
+    .demo-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      transition: transform 0.3s ease-out, rotate 0.3s ease-out;
+      cursor: pointer;
+    }
+
+    .demo-button:hover {
+      transform: translateY(-0.25rem);
+      rotate: 0.5deg;
+    }
+
+    .demo-button:active {
+      transform: scale(0.99);
+    }
+
+    .demo-note {
+      margin-top: 0.75rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+    }
+
+    .demo-portfolio {
+      margin-top: 4rem;
+      text-align: center;
+    }
+
+    .demo-portfolio-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .portfolio-grid {
+      max-width: 48rem;
+      margin: 1rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .portfolio-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border: 1px solid var(--glass-border);
+      background: rgba(255,255,255,0.6);
+      border-radius: 0.875rem;
+      padding: 1rem;
+      backdrop-filter: blur(10px);
+      transition: background 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .portfolio-card:hover {
+      background: rgba(255,255,255,0.8);
+      transform: translateY(-2px);
+    }
+
+    .portfolio-color {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.6);
+    }
+
+    .portfolio-text {
+      min-width: 0;
+    }
+
+    .portfolio-name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #1e293b;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .portfolio-city {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    /* Garantia Section */
+    .garantia {
+      padding: 1.5rem;
+      padding-top: 4rem;
+      padding-bottom: 6rem;
+    }
+
+    .garantia-header {
+      max-width: 48rem;
+      margin: 0 auto;
+      text-align: center;
+      animation: reveal 0.7s ease-out 0s both;
+    }
+
+    .garantia-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .garantia-header h2 {
+      margin-top: 0.5rem;
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    @media (min-width: 640px) {
+      .garantia-header h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    .garantia-desc {
+      margin-top: 0.75rem;
+      color: var(--text-light);
+    }
+
+    .garantia-cards {
+      max-width: 80rem;
+      margin: 3rem auto 0;
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .garantia-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .garantia-cards {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .garantia-card {
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
+      background: var(--glass);
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.2s, background 0.2s;
+      animation: reveal 0.7s ease-out forwards;
+    }
+
+    .garantia-card:nth-child(1) { animation-delay: 0s; }
+    .garantia-card:nth-child(2) { animation-delay: 0.1s; }
+    .garantia-card:nth-child(3) { animation-delay: 0.2s; }
+    .garantia-card:nth-child(4) { animation-delay: 0.3s; }
+
+    .garantia-card:hover {
+      transform: translateY(-0.25rem);
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 18px 50px -24px rgba(15,76,117,0.4);
+    }
+
+    .garantia-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 0.75rem;
+      background: rgba(14,165,183,0.09);
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .garantia-icon svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    .garantia-title {
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+
+    .garantia-desc-card {
+      font-size: 0.875rem;
+      color: var(--text-light);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 48rem;
+      margin: 0 auto;
+      border-radius: 1.875rem;
+      border: 1px solid var(--glass-border);
+      background: rgba(255,255,255,0.6);
+      padding: 3.5rem 1.5rem;
+      box-shadow: 0 24px 70px -30px rgba(15,76,117,0.4);
+      backdrop-filter: blur(20px);
+      animation: reveal 0.7s ease-out;
+    }
+
+    .cta-box h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    @media (min-width: 640px) {
+      .cta-box h2 {
+        font-size: 1.875rem;
+      }
+    }
+
+    .cta-box p {
+      margin-top: 0.75rem;
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--text-light);
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 640px) {
+      .cta-buttons {
+        flex-direction: row;
+      }
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal.open {
+      display: flex;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(12,42,58,0.5);
+      backdrop-filter: blur(4px);
+      cursor: pointer;
+    }
+
+    .modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 32rem;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.875rem;
+      padding: 1.5rem;
+      box-shadow: 0 20px 90px rgba(0,0,0,0.2);
+      backdrop-filter: blur(20px);
+      animation: slideIn 0.2s ease-out;
+    }
+
+    @media (min-width: 640px) {
+      .modal-content {
+        padding: 2rem;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      color: #9ca3af;
+      font-size: 1.25rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .modal-close:hover {
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    .modal h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .modal p {
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+      color: #4b5563;
+    }
+
+    .modal-form {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-group input {
+      border-radius: 0.5rem;
+      border: 1px solid #d1d5db;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      border-color: #6b7280;
+    }
+
+    .form-submit {
+      width: 100%;
+      border-radius: 9999px;
+      padding: 0.75rem;
+      font-weight: 600;
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 8px 16px -4px rgba(15,76,117,0.4);
+      transition: filter 0.2s;
+    }
+
+    .form-submit:hover {
+      filter: brightness(1.1);
+    }
+
+    .form-submit:active {
+      transform: scale(0.95);
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      box-shadow: 0 8px 16px -4px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .whatsapp-btn:active {
+      transform: scale(0.95);
+    }
+
+    .whatsapp-btn svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .whatsapp-ping {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      opacity: 0.75;
+      animation: ping 2s cubic-bezier(0,0,0.2,1) 3;
+    }
+
+    @keyframes ping {
+      75%, 100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      left: 1rem;
+      z-index: 60;
+      max-width: 20rem;
+      border-radius: 1rem;
+      border: 1px solid var(--glass-border);
+      background: rgba(255,255,255,0.8);
+      padding: 1.25rem;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+      backdrop-filter: blur(20px);
+      animation: slideUp 0.3s ease-out;
+      display: none;
+    }
+
+    .cookie-banner.open {
+      display: block;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 640px) {
+      .cookie-banner {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        left: auto;
+      }
+    }
+
+    .cookie-text {
+      font-size: 0.875rem;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .cookie-text a {
+      font-weight: 500;
+      text-decoration: underline;
+      color: var(--primary);
+    }
+
+    .cookie-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.5rem;
+    }
+
+    .btn-cookie-reject {
+      border-radius: 9999px;
+      border: 1px solid #cbd5e1;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #475569;
+      background: transparent;
+      transition: background 0.2s;
+    }
+
+    .btn-cookie-reject:hover {
+      background: #f1f5f9;
+    }
+
+    .btn-cookie-accept {
+      border-radius: 9999px;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      background: var(--primary);
+      transition: filter 0.2s;
+    }
+
+    .btn-cookie-accept:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Footer */
+    footer {
+      padding: 3.5rem 1.5rem;
+      color: rgba(255,255,255,0.6);
+      background: #0A2E44;
+    }
+
+    .footer-grid {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      gap: 2.5rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer-col .logo {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col .logo span {
+      color: white;
+    }
+
+    .footer-desc {
+      max-width: 15rem;
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-nav a {
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    .footer-divider {
+      max-width: 80rem;
+      margin: 2.5rem auto 0;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* Reveal animation (on scroll) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .reveal.visible {
+      animation: revealAnimate 0.7s ease-out forwards;
+    }
+
+    @keyframes revealAnimate {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-main">
+      <div class="logo">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="9" fill="#0F4C75"/>
+          <g transform="translate(6,7) scale(0.83)">
+            <path d="M12 2C9.5 2 8 3.5 6.5 3.5C5.2 3.5 4 4.7 4 6.5C4 8.8 4.8 10.3 5.3 12.5C5.8 14.8 6 17.5 7.5 18.5C9 19.5 9.8 17 10.5 14.8C10.9 13.5 11.4 13 12 13C12.6 13 13.1 13.5 13.5 14.8C14.2 17 15 19.5 16.5 18.5C18 17.5 18.2 14.8 18.7 12.5C19.2 10.3 20 8.8 20 6.5C20 4.7 18.8 3.5 17.5 3.5C16 3.5 14.5 2 12 2Z" fill="white"/>
+          </g>
+        </svg>
+        <span>ClinicaWeb</span>
+      </div>
+      <nav class="desktop">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-presupuesto" data-modal="presupuesto">Pedir presupuesto</button>
+    </div>
+    <nav class="mobile">
+      <a href="#servicios">Servicios</a>
+      <a href="#precios">Precios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">Para clínicas dentales de España</div>
+        <h1>Webs para clínicas dentales que <span class="accent">convierten búsquedas en citas</span></h1>
+        <p class="hero-desc">Diseñamos, publicamos y mantenemos la web de tu clínica por una cuota mensual fija, sin permanencia. Y lo mejor: ves tu web terminada, con tus datos reales, antes de invertir un solo euro.</p>
+        <div class="hero-buttons">
+          <a href="#demo" class="btn-primary">Ver una demo real</a>
+          <button class="btn-secondary" data-modal="presupuesto">Pedir mi demo gratis</button>
+        </div>
+        <div class="hero-social">
+          <div class="stars">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+          </div>
+          Demos reales con reseñas de Google integradas
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges Section -->
+    <section class="badges">
+      <div class="badges-grid">
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
+          </div>
+          <p class="badge-text">Demo real antes de pagar</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 7.5-2" /></svg>
+          </div>
+          <p class="badge-text">Sin permanencia</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg>
+          </div>
+          <p class="badge-text">Cumplimiento RGPD y LSSI</p>
+        </div>
+        <div class="badge-item">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.9 8.4A8.5 8.5 0 1 1 21 11.5Z" /><circle cx="8" cy="11.5" r="1.1" fill="currentColor" stroke="none" /><circle cx="12" cy="11.5" r="1.1" fill="currentColor" stroke="none" /><circle cx="16" cy="11.5" r="1.1" fill="currentColor" stroke="none" /></svg>
+          </div>
+          <p class="badge-text">Soporte directo por WhatsApp</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo-section" id="demo">
+      <div class="demo-header reveal">
+        <p class="demo-label">Compruébalo tú mismo</p>
+        <h2>Así queda una clínica con nosotros</h2>
+      </div>
+
+      <div class="demo-mockup reveal" style="animation-delay: 150ms;">
+        <button class="demo-button" data-modal="demotour">
+          <div class="browser-frame">
+            <div style="background: linear-gradient(135deg, #0E7C7B 0%, #0E7C7B 55%, #F4A259 140%); color: white; padding: 2.5rem 1.5rem;">
+              <p style="display: inline-block; border-radius: 9999px; background: rgba(255,255,255,0.15); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.75rem;">Clínica Dental Sonrisalud · Salamanca</p>
+              <h3 style="max-width: 32rem; font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 1.25rem;">Tu sonrisa, en las mejores manos de Salamanca</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <span style="border-radius: 9999px; background: white; color: #0E7C7B; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 600;">Pedir cita por WhatsApp</span>
+                <span style="border-radius: 9999px; border: 1px solid rgba(255,255,255,0.5); color: white; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 600;">Llamar ahora</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; color: rgba(255,255,255,0.85);">
+                <span style="display: flex; color: #fbbf24;">
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+                  <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+                </span>
+                <span>4,8 · 47 reseñas en Google</span>
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #f3f4f6; text-align: center; font-size: 0.75rem; font-weight: 500; color: #9ca3af;">
+              <div style="background: white; padding: 1rem;">Implantes</div>
+              <div style="background: white; padding: 1rem;">Ortodoncia</div>
+              <div style="background: white; padding: 1rem;">Blanqueamiento</div>
+            </div>
+          </div>
+        </button>
+        <p class="demo-note">Haz clic para recorrer más secciones de esta demo ↑</p>
+      </div>
+
+      <div class="demo-portfolio reveal" style="animation-delay: 250ms;">
+        <p class="demo-portfolio-label">Demos de muestra</p>
+        <div class="portfolio-grid">
+          <a href="https://sonrisalud-demo.onrender.com" target="_blank" class="portfolio-card">
+            <div class="portfolio-color" style="background: linear-gradient(135deg, #0E7C7B, #F4A259);"></div>
+            <div class="portfolio-text">
+              <p class="portfolio-name">Clínica Dental Sonrisalud</p>
+              <p class="portfolio-city">Salamanca · demo de muestra ↗</p>
+            </div>
+          </a>
+          <a href="https://vallmar-demo.onrender.com" target="_blank" class="portfolio-card">
+            <div class="portfolio-color" style="background: linear-gradient(135deg, #7C2D3A, #D4A24C);"></div>
+            <div class="portfolio-text">
+              <p class="portfolio-name">Clínica Dental Vallmar</p>
+              <p class="portfolio-city">Burgos · demo de muestra ↗</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Garantia Section -->
+    <section class="garantia">
+      <div class="garantia-header">
+        <p class="garantia-label">Por qué es una decisión segura</p>
+        <h2>Nuestro compromiso, sin letra chica</h2>
+        <p class="garantia-desc">Cuando un paciente busca «dentista» en tu ciudad, o te encuentra a ti… o encuentra a otra clínica. Nosotros nos encargamos de que te encuentre a ti — y asumimos el riesgo para que probarlo no te cueste nada.</p>
+      </div>
+
+      <div class="garantia-cards">
+        <div class="garantia-card">
+          <div class="garantia-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></svg>
+          </div>
+          <h3 class="garantia-title">Ves antes de invertir</h3>
+          <p class="garantia-desc-card">Preparamos tu web con tus datos reales y la ves funcionando. Solo si te convence, hablamos de activarla.</p>
+        </div>
+        <div class="garantia-card">
+          <div class="garantia-icon">
+            <svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="9" rx="2" /><path d="M8 11V7a4 4 0 0 1 7.5-2" /></svg>
+          </div>
+          <h3 class="garantia-title">Sin permanencia</h3>
+          <p class="garantia-desc-card">Pagas mes a mes. Si algún día no quieres seguir, lo dejas sin penalización y sin dar explicaciones.</p>
+        </div>
+        <div class="garantia-card">
+          <div class="garantia-icon">
+            <svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4" /><path d="m10.85 12.15 8.5-8.5M15 7l3 3M18 4l2 2" /></svg>
+          </div>
+          <h3 class="garantia-title">Tu dominio es tuyo</h3>
+          <p class="garantia-desc-card">Pase lo que pase, el dominio queda a tu nombre. Te lo llevas siempre, con o sin nosotros.</p>
+        </div>
+        <div class="garantia-card">
+          <div class="garantia-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0Z" /><circle cx="12" cy="10" r="3" /></svg>
+          </div>
+          <h3 class="garantia-title">Una sola clínica por zona</h3>
+          <p class="garantia-desc-card">No trabajamos con tu competencia de al lado. Si tu zona está libre, es tuya en exclusiva.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-box">
+        <h2>¿Quieres ver cómo quedaría la web de tu propia clínica?</h2>
+        <p>Pide tu demo gratuita hoy: la preparamos con el nombre, las reseñas y los datos reales de tu clínica, y la ves funcionando antes de decidir nada.</p>
+        <div class="cta-buttons">
+          <a href="#precios" class="btn-primary">Ver precios</a>
+          <button class="btn-secondary" data-modal="presupuesto">Hablar con nosotros</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo light">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect width="32" height="32" rx="9" fill="rgba(255,255,255,0.14)"/>
+            <g transform="translate(6,7) scale(0.83)">
+              <path d="M12 2C9.5 2 8 3.5 6.5 3.5C5.2 3.5 4 4.7 4 6.5C4 8.8 4.8 10.3 5.3 12.5C5.8 14.8 6 17.5 7.5 18.5C9 19.5 9.8 17 10.5 14.8C10.9 13.5 11.4 13 12 13C12.6 13 13.1 13.5 13.5 14.8C14.2 17 15 19.5 16.5 18.5C18 17.5 18.2 14.8 18.7 12.5C19.2 10.3 20 8.8 20 6.5C20 4.7 18.8 3.5 17.5 3.5C16 3.5 14.5 2 12 2Z" fill="white"/>
+            </g>
+          </svg>
+          <span>ClinicaWeb</span>
+        </div>
+        <p class="footer-desc">Webs para clínicas dentales que convierten búsquedas en citas</p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Navegación</p>
+        <nav class="footer-nav">
+          <a href="#servicios">Servicios</a>
+          <a href="#precios">Precios</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Legal</p>
+        <nav class="footer-nav">
+          <a href="/aviso-legal">Aviso legal</a>
+          <a href="/privacidad">Política de privacidad</a>
+          <a href="/cookies">Política de cookies</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Contacto</p>
+        <div class="footer-nav">
+          <a href="mailto:hola@tuclinicaweb.com">hola@tuclinicaweb.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-divider">
+      © <span id="year">2026</span> ClinicaWeb. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/5492615368176?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20webs%20para%20cl%C3%ADnicas" target="_blank" class="whatsapp-btn" aria-label="Escribir por WhatsApp">
+    <div class="whatsapp-ping"></div>
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.81-.11-.42-.13-.95-.31-1.64-.6-2.88-1.24-4.76-4.14-4.9-4.33-.14-.19-1.17-1.56-1.17-2.98 0-1.41.74-2.11 1-2.4.26-.29.57-.36.76-.36.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.58.81 2 .88 2.14.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.35 1.45.29.15.46.13.63-.08.17-.2.72-.84.92-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.93.29.15.48.22.55.34.07.13.07.75-.17 1.43Z" />
+    </svg>
+  </a>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <p class="cookie-text">Usamos cookies técnicas y analíticas para mejorar tu experiencia. Puedes leer más en nuestra <a href="/cookies">política de cookies</a>.</p>
+    <div class="cookie-buttons">
+      <button class="btn-cookie-reject" data-cookie-action="reject">Rechazar</button>
+      <button class="btn-cookie-accept" data-cookie-action="accept">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Modal: Presupuesto -->
+  <div class="modal" id="presupuestoModal">
+    <div class="modal-backdrop" onclick="closeModal('presupuestoModal')"></div>
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('presupuestoModal')">✕</button>
+      <h3>Cuéntanos sobre tu clínica</h3>
+      <p>Te escribimos por WhatsApp con una propuesta armada para ti, sin compromiso.</p>
+      <form class="modal-form" id="presupuestoForm">
+        <div class="form-group">
+          <label for="clinicName">Nombre de la clínica</label>
+          <input type="text" id="clinicName" placeholder="Ej. Clínica Dental Sonrisalud" required>
+        </div>
+        <div class="form-group">
+          <label for="clinicCity">Ciudad</label>
+          <input type="text" id="clinicCity" placeholder="Ej. Salamanca" required>
+        </div>
+        <button type="submit" class="form-submit">Continuar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal: Demo Tour -->
+  <div class="modal" id="demotourModal">
+    <div class="modal-backdrop" onclick="closeModal('demotourModal')"></div>
+    <div class="modal-content" style="max-width: 48rem;">
+      <button class="modal-close" onclick="closeModal('demotourModal')">✕</button>
+      <p style="margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #cbd5e1;">Recorrido de la demo</p>
+      <div class="browser-frame">
+        <div style="background: linear-gradient(135deg, #0E7C7B 0%, #0E7C7B 55%, #F4A259 140%); color: white; padding: 2.5rem 1.5rem;">
+          <p style="display: inline-block; border-radius: 9999px; background: rgba(255,255,255,0.15); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.75rem;">Clínica Dental Sonrisalud · Salamanca</p>
+          <h3 style="max-width: 32rem; font-size: 1.5rem; font-weight: 700; line-height: 1.3; margin-bottom: 1.25rem;">Tu sonrisa, en las mejores manos de Salamanca</h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+            <span style="border-radius: 9999px; background: white; color: #0E7C7B; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 600;">Pedir cita por WhatsApp</span>
+            <span style="border-radius: 9999px; border: 1px solid rgba(255,255,255,0.5); color: white; padding: 0.5rem 1rem; font-size: 0.75rem; font-weight: 600;">Llamar ahora</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.375rem; font-size: 0.75rem; color: rgba(255,255,255,0.85);">
+            <span style="display: flex; color: #fbbf24;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            </span>
+            <span>4,8 · 47 reseñas en Google</span>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #f3f4f6;">
+          <div style="background: white; padding: 1.25rem; text-align: left;">
+            <div style="display: flex; color: #fbbf24; margin-bottom: 0.5rem;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            </div>
+            <p style="font-size: 0.75rem; color: #4b5563;">&ldquo;Un trato excelente desde el primer momento. Muy recomendable.&rdquo;</p>
+            <p style="font-size: 0.75rem; font-weight: 600; color: #111827; margin-top: 0.5rem;">María G.</p>
+          </div>
+          <div style="background: white; padding: 1.25rem; text-align: left;">
+            <div style="display: flex; color: #fbbf24; margin-bottom: 0.5rem;">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width: 0.875rem; height: 0.875rem;"><path d="M12 2.5l2.9 6.06 6.6.77-4.86 4.6 1.28 6.57L12 17.35l-5.92 3.15 1.28-6.57-4.86-4.6 6.6-.77L12 2.5Z" /></svg>
+            </div>
+            <p style="font-size: 0.75rem; color: #4b5563;">&ldquo;Le tenía pánico al dentista y aquí me cambiaron la percepción.&rdquo;</p>
+            <p style="font-size: 0.75rem; font-weight: 600; color: #111827; margin-top: 0.5rem;">Javier R.</p>
+          </div>
+        </div>
+        <a href="https://sonrisalud-demo.onrender.com" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem; font-size: 0.875rem; font-weight: 600; color: white; background: #0F4C75; text-decoration: none; transition: opacity 0.2s;">
+          Abrir la demo completa en tu navegador ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Modal functions
+    function openModal(modalId) {
+      document.getElementById(modalId).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Modal triggers
+    document.querySelectorAll('[data-modal]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        openModal(btn.dataset.modal + 'Modal');
+      });
+    });
+
+    // Modal backdrop close
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', (e) => {
+        if (e.target === backdrop) {
+          const modal = backdrop.closest('.modal');
+          closeModal(modal.id);
+        }
+      });
+    });
+
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal.open').forEach(modal => {
+          closeModal(modal.id);
+        });
+      }
+    });
+
+    // Presupuesto form
+    document.getElementById('presupuestoForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('clinicName').value;
+      const city = document.getElementById('clinicCity').value;
+      const msg = encodeURIComponent(`Hola, soy de la clínica "${name || '—'}" en ${city || '—'}. Me gustaría ver una demo de mi web.`);
+      window.open(`https://wa.me/5492615368176?text=${msg}`, '_blank');
+      closeModal('presupuestoModal');
+    });
+
+    // Cookie consent
+    const COOKIE_KEY = 'clinicaweb-cookies-aceptadas';
+    const cookieBanner = document.getElementById('cookieBanner');
+
+    function setupCookieBanner() {
+      const decision = localStorage.getItem(COOKIE_KEY);
+      if (!decision) {
+        setTimeout(() => {
+          cookieBanner.classList.add('open');
+        }, 600);
+      }
+    }
+
+    document.querySelectorAll('[data-cookie-action]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.dataset.cookieAction;
+        localStorage.setItem(COOKIE_KEY, action === 'accept' ? 'true' : 'false');
+        cookieBanner.classList.remove('open');
+      });
+    });
+
+    setupCookieBanner();
+
+    // Reveal on scroll
+    const observerOptions = {
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Active nav link tracking
+    const sections = ['servicios', 'precios', 'nosotros', 'contacto', 'demo'];
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el && el.offsetTop <= window.scrollY + 100) {
+          current = section;
+        }
+      }
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
