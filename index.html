@@ -187,7 +187,7 @@
             </div>
           </div>
         </button>
-        <p class="demo-note">Haz clic para recorrer más secciones de esta demo ↑</p>
+        <p class="demo-note">Ejemplo de demostración · haz clic para recorrer más secciones ↑</p>
       </div>
 
       <div class="demo-portfolio reveal" style="animation-delay: 250ms;">
@@ -208,6 +208,44 @@
             </div>
           </a>
         </div>
+      </div>
+    </section>
+
+    <!-- Casos Section -->
+    <section class="casos" id="casos">
+      <div class="section-head reveal">
+        <p class="section-label">Casos reales</p>
+        <h2>Resultados de clínicas reales</h2>
+        <p>Aquí no encontrarás testimonios inventados. Solo publicamos clínicas reales, con su permiso, con nombre, ciudad y números que se pueden comprobar.</p>
+      </div>
+
+      <!-- Estado vacío honesto: se elimina en cuanto exista el primer caso real -->
+      <div class="casos-empty reveal">
+        <p>Estamos preparando los primeros casos. En cuanto una clínica nos autorice a compartir sus datos y su web publicada, aparecerá en este espacio — con métricas verificables, no promesas.</p>
+        <button class="btn-primary" data-modal="presupuesto" data-analytics="casos-primero">Quiero ser el primer caso</button>
+      </div>
+
+      <!--
+        PLANTILLA de caso real. Para publicar el primer caso:
+        1) Quita el atributo hidden de .casos-grid.
+        2) Rellena los campos entre <!- ... -> de una <article>.
+        3) Duplica la <article> por cada caso adicional.
+        Subir un caso es un cambio de contenido, no de código.
+      -->
+      <div class="casos-grid" hidden>
+        <article class="caso-card">
+          <header class="caso-head">
+            <img class="caso-logo" src="" alt="" width="52" height="52">
+            <div>
+              <p class="caso-name"><!-- Clínica Dental Ejemplo --></p>
+              <p class="caso-city"><!-- Ciudad --></p>
+            </div>
+          </header>
+          <p class="caso-metric"><!-- De 12 a 27 citas/mes en 90 días --></p>
+          <blockquote class="caso-quote"><!-- Cita textual del responsable de la clínica --></blockquote>
+          <p class="caso-author"><!-- Nombre y apellido · cargo --></p>
+          <a class="caso-link" href="" target="_blank" rel="noopener"><!-- Ver su web en producción ↗ --></a>
+        </article>
       </div>
     </section>
 
@@ -309,9 +347,9 @@
     <!-- Chat Demo Section -->
     <section class="chat-demo">
       <div class="section-head reveal">
-        <p class="section-label">Así se cierra una cita</p>
+        <p class="section-label">Simulación del proceso</p>
         <h2>De la demo al «vamos adelante»</h2>
-        <p>La demo hace el trabajo pesado: cuando el cliente la ve, la conversación se cierra sola. Un ejemplo real del tipo de charla que genera.</p>
+        <p>La demo hace el trabajo pesado: cuando el cliente la ve, la conversación se cierra sola. Así es el tipo de charla que genera.</p>
       </div>
       <div class="chat-demo-inner reveal">
         <div class="phone">
@@ -341,6 +379,7 @@
           <h3>Enseñas el resultado, no una promesa</h3>
           <p>En lugar de explicar lo que podrías hacer, el cliente ya ve su web funcionando con su nombre y sus reseñas. La venta deja de ser «¿te interesa una web?» y pasa a ser «¿te quedas con esta?».</p>
           <button class="btn-primary" data-modal="presupuesto">Quiero mi demo gratis</button>
+          <p class="chat-disclaimer">*Ejemplo ilustrativo del proceso, no una conversación real.</p>
         </div>
       </div>
     </section>
@@ -495,7 +534,7 @@
     <div class="modal-backdrop"></div>
     <div class="modal-content" style="max-width: 48rem;">
       <button class="modal-close" aria-label="Cerrar">✕</button>
-      <p style="margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #cbd5e1;">Recorrido de la demo</p>
+      <p style="margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #cbd5e1;">Recorrido de la demo · datos de demostración</p>
       <div class="browser-frame">
         <div style="background: linear-gradient(135deg, #0E7C7B 0%, #0E7C7B 55%, #F4A259 140%); color: white; padding: 2.5rem 1.5rem;">
           <p style="display: inline-block; border-radius: 9999px; background: rgba(255,255,255,0.15); padding: 0.25rem 0.75rem; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.75rem;">Clínica Dental Sonrisalud · Salamanca</p>

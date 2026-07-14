@@ -298,6 +298,108 @@
   color: var(--text-light);
 }
 
+/* Casos Section */
+.casos {
+  padding: var(--spacing-lg);
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.casos-empty {
+  max-width: 44rem;
+  margin: 2.5rem auto 0;
+  border-radius: var(--radius-3xl);
+  border: 1px dashed var(--glass-border);
+  background: rgba(255,255,255,0.5);
+  padding: 2.5rem var(--spacing-lg);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.casos-empty p {
+  max-width: 34rem;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--text-light);
+}
+
+.casos-grid {
+  max-width: 60rem;
+  margin: 3rem auto 0;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+}
+
+.caso-card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  padding: var(--spacing-xl);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.caso-head {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.caso-logo {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  flex-shrink: 0;
+  background: var(--icon-bg);
+}
+
+.caso-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.caso-city {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.caso-metric {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.caso-quote {
+  color: var(--text-light);
+  font-style: italic;
+  border-left: 3px solid var(--accent);
+  padding-left: var(--spacing-md);
+}
+
+.caso-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.caso-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.caso-link:hover {
+  color: var(--text);
+}
+
+@media (min-width: 640px) {
+  .casos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Precios Section */
 .precios {
   padding: var(--spacing-lg);
@@ -614,6 +716,13 @@
 .chat-demo-aside p {
   color: var(--text-light);
   margin-bottom: var(--spacing-lg);
+}
+
+.chat-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0.8;
+  margin-bottom: 0;
 }
 
 /* Phone frame */
