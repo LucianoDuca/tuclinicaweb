@@ -50,6 +50,137 @@
   color: #64748b;
 }
 
+/* Hero Showcase (device mockups) */
+.showcase {
+  padding: 0 var(--spacing-lg) 2rem;
+  overflow: hidden;
+}
+
+.showcase-devices {
+  position: relative;
+  max-width: 60rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.device-laptop {
+  width: 100%;
+  max-width: 52rem;
+}
+
+.device-laptop-screen {
+  border: 10px solid #1f2430;
+  border-radius: 14px 14px 0 0;
+  background: #1f2430;
+  overflow: hidden;
+  box-shadow: 0 30px 70px -30px rgba(0,0,0,0.5);
+}
+
+.device-laptop-screen img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.device-laptop-base {
+  display: block;
+  height: 14px;
+  margin: 0 auto;
+  width: 118%;
+  max-width: none;
+  transform: translateX(-7.6%);
+  background: linear-gradient(#d0d4dc, #a9afbd);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 12px 20px -10px rgba(0,0,0,0.35);
+}
+
+.device-phone {
+  position: absolute;
+  right: 2%;
+  bottom: -1.5rem;
+  width: 26%;
+  max-width: 9.5rem;
+}
+
+.device-phone-screen {
+  border: 7px solid #0d0d0d;
+  border-radius: 1.4rem;
+  background: #0d0d0d;
+  overflow: hidden;
+  box-shadow: 0 22px 44px -18px rgba(0,0,0,0.55);
+  aspect-ratio: 360 / 620;
+}
+
+.device-phone-screen img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.showcase-note {
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Demo carousel (CSS scroll-snap, no JS) */
+.demo-carousel {
+  max-width: 60rem;
+  margin: 3rem auto 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--spacing-sm);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-item {
+  flex: 0 0 85%;
+  max-width: 40rem;
+  scroll-snap-align: center;
+  margin: 0;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 16px 40px -22px rgba(0,0,0,0.4);
+}
+
+.carousel-item figcaption {
+  margin-top: var(--spacing-sm);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.carousel-hint {
+  margin-top: var(--spacing-sm);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+@media (min-width: 700px) {
+  .carousel-item { flex-basis: 48%; }
+  .carousel-hint { display: none; }
+  .device-phone { bottom: -2.5rem; }
+}
+
 /* Badges Section */
 .badges {
   padding: 2rem var(--spacing-lg);
