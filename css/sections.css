@@ -170,10 +170,82 @@
 .garantia-card:nth-child(3) { animation-delay: 0.2s; }
 .garantia-card:nth-child(4) { animation-delay: 0.3s; }
 
+/* FAQ Section */
+.faq {
+  padding: var(--spacing-lg);
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.faq-list {
+  max-width: 48rem;
+  margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.faq-item {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--accent);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  padding: 0 var(--spacing-lg) var(--spacing-lg);
+}
+
+.faq-answer p {
+  color: var(--text-light);
+  font-size: 0.925rem;
+}
+
 /* CTA Section */
 .cta-section {
   padding: var(--spacing-lg);
   text-align: center;
+}
+
+.cta-urgency {
+  margin-top: var(--spacing-md) !important;
+  color: var(--text) !important;
+  font-size: 0.95rem;
+}
+
+.cta-urgency strong {
+  color: var(--accent);
 }
 
 .cta-box {
