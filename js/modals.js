@@ -23,6 +23,10 @@ export function setupModalEventListeners() {
   document.querySelectorAll('[data-modal]').forEach(btn => {
     btn.addEventListener('click', () => {
       const modalId = btn.dataset.modal + 'Modal';
+      const modal = document.getElementById(modalId);
+      // Record which CTA position opened the modal so the WhatsApp deep link
+      // can carry it as utm_campaign (measures which position converts).
+      if (modal) modal.dataset.source = btn.dataset.analytics || 'sin-posicion';
       openModal(modalId);
     });
   });

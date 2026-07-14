@@ -15,8 +15,9 @@ export function encodeWhatsAppMessage(name, city) {
   );
 }
 
-export function openWhatsAppChat(phone, message) {
-  const url = `https://wa.me/${phone}?text=${message}`;
+export function openWhatsAppChat(phone, message, campaign = 'sin-posicion') {
+  const utm = `utm_source=web&utm_medium=cta&utm_campaign=${encodeURIComponent(campaign)}`;
+  const url = `https://wa.me/${phone}?text=${message}&${utm}`;
   window.open(url, '_blank');
 }
 

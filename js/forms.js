@@ -24,7 +24,9 @@ export function setupPresupuestoForm() {
     const city = cityInput.value;
     const message = encodeWhatsAppMessage(name, city);
 
-    openWhatsAppChat(WHATSAPP_PHONE, message);
+    // Position of the CTA that opened the modal, recorded by setupModalEventListeners.
+    const campaign = form.closest('.modal')?.dataset.source || 'sin-posicion';
+    openWhatsAppChat(WHATSAPP_PHONE, message, campaign);
 
     // Clear form and close modal
     form.reset();
