@@ -5,6 +5,7 @@
 import { encodeWhatsAppMessage, openWhatsAppChat } from './utils.js';
 import { closeModal } from './modals.js';
 
+// TODO: sustituir por línea +34 (WhatsApp Business API española) cuando esté dada de alta — ver TASK-01
 const WHATSAPP_PHONE = '5492617776907';
 
 export function setupPresupuestoForm() {
