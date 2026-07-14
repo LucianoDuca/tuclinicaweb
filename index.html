@@ -8,6 +8,24 @@
   <link rel="canonical" href="https://tuclinicaweb.com">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
+  <!-- Open Graph (compartición en WhatsApp / redes) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TuClínicaWeb">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://tuclinicaweb.com">
+  <meta property="og:title" content="Webs para clínicas dentales que convierten búsquedas en citas">
+  <meta property="og:description" content="Ves tu web terminada, con los datos reales de tu clínica, antes de pagar. Cuota mensual fija, sin permanencia y con el dominio a tu nombre.">
+  <meta property="og:image" content="https://tuclinicaweb.com/assets/images/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ejemplo de web para clínica dental hecha por TuClínicaWeb">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Webs para clínicas dentales que convierten búsquedas en citas">
+  <meta name="twitter:description" content="Ves tu web terminada, con los datos reales de tu clínica, antes de pagar. Sin permanencia y con el dominio a tu nombre.">
+  <meta name="twitter:image" content="https://tuclinicaweb.com/assets/images/og-image.webp">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -671,6 +689,44 @@
       </div>
     </div>
   </div>
+
+  <!-- Structured data: Organization + Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tuclinicaweb.com/#organization",
+        "name": "TuClínicaWeb",
+        "url": "https://tuclinicaweb.com",
+        "email": "hola@tuclinicaweb.com",
+        "logo": "https://tuclinicaweb.com/assets/images/tuclinicaweb-logo.svg",
+        "image": "https://tuclinicaweb.com/assets/images/og-image.webp",
+        "description": "Diseño, publicación y mantenimiento de webs para clínicas dentales de España por una cuota mensual fija, sin permanencia.",
+        "areaServed": {
+          "@type": "Country",
+          "name": "España"
+        }
+      },
+      {
+        "@type": "Service",
+        "name": "Webs para clínicas dentales",
+        "serviceType": "Diseño y mantenimiento de webs para clínicas dentales",
+        "provider": { "@id": "https://tuclinicaweb.com/#organization" },
+        "areaServed": {
+          "@type": "Country",
+          "name": "España"
+        },
+        "offers": [
+          { "@type": "Offer", "name": "Plan Básico", "price": "19", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Plan Profesional", "price": "29", "priceCurrency": "EUR" },
+          { "@type": "Offer", "name": "Plan Premium", "price": "49", "priceCurrency": "EUR" }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Structured data: FAQ -->
   <script type="application/ld+json">
