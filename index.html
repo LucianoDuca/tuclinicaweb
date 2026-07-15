@@ -265,43 +265,6 @@
       </div>
     </section>
 
-    <!-- Casos Section -->
-    <section class="casos" id="casos">
-      <div class="section-head reveal">
-        <p class="section-label">Casos reales</p>
-        <h2>Resultados de clínicas reales</h2>
-        <p>Aquí no encontrarás testimonios inventados. Solo publicamos clínicas reales, con su permiso, con nombre, ciudad y números que se pueden comprobar.</p>
-      </div>
-
-      <!-- Estado vacío honesto: se elimina en cuanto exista el primer caso real -->
-      <div class="casos-empty reveal">
-        <p>Estamos preparando los primeros casos. En cuanto una clínica nos autorice a compartir sus datos y su web publicada, aparecerá en este espacio — con métricas verificables, no promesas.</p>
-        <button class="btn-primary" data-modal="presupuesto" data-analytics="casos-primero">Quiero ser el primer caso</button>
-      </div>
-
-      <!--
-        PLANTILLA de caso real. Para publicar el primer caso:
-        1) Quita el atributo hidden de .casos-grid.
-        2) Rellena los campos entre <!- ... -> de una <article>.
-        3) Duplica la <article> por cada caso adicional.
-        Subir un caso es un cambio de contenido, no de código.
-      -->
-      <div class="casos-grid" hidden>
-        <article class="caso-card">
-          <header class="caso-head">
-            <img class="caso-logo" src="" alt="" width="52" height="52">
-            <div>
-              <p class="caso-name"><!-- Clínica Dental Ejemplo --></p>
-              <p class="caso-city"><!-- Ciudad --></p>
-            </div>
-          </header>
-          <p class="caso-metric"><!-- De 12 a 27 citas/mes en 90 días --></p>
-          <blockquote class="caso-quote"><!-- Cita textual del responsable de la clínica --></blockquote>
-          <p class="caso-author"><!-- Nombre y apellido · cargo --></p>
-          <a class="caso-link" href="" target="_blank" rel="noopener"><!-- Ver su web en producción ↗ --></a>
-        </article>
-      </div>
-    </section>
 
     <!-- Precios Section -->
     <section class="precios" id="precios">
@@ -431,8 +394,13 @@
           </div>
         </div>
         <div class="chat-demo-aside">
-          <h3>Enseñas el resultado, no una promesa</h3>
-          <p>En lugar de explicar lo que podrías hacer, el cliente ya ve su web funcionando con su nombre y sus reseñas. La venta deja de ser «¿te interesa una web?» y pasa a ser «¿te quedas con esta?».</p>
+          <div class="chat-demo-brand">
+            <span class="logo-chip"><img src="assets/images/tuclinicaweb-logo.svg" alt="TuClínicaWeb"></span>
+            <span class="chat-demo-brand-name">TuClínicaWeb</span>
+          </div>
+          <p class="chat-demo-kicker">Tener tu propia web es necesario</p>
+          <h3>Así de fácil es tener la web que tu clínica necesita</h3>
+          <p>Nosotros la diseñamos, la publicamos con tu dominio y la mantenemos al día. Tú solo te dedicas a tus pacientes, mientras ellos te encuentran y reservan cita sin esfuerzo.</p>
           <button class="btn-primary" data-modal="presupuesto" data-analytics="chat">Quiero mi demo gratis</button>
           <p class="chat-disclaimer">*Ejemplo ilustrativo del proceso, no una conversación real.</p>
         </div>
