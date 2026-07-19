@@ -39,12 +39,86 @@
   <link rel="stylesheet" href="css/sections.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Structured data: ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://tuclinicaweb.com/#business",
+    "name": "TuClínicaWeb",
+    "url": "https://tuclinicaweb.com",
+    "email": "hola@tuclinicaweb.com",
+    "logo": "https://tuclinicaweb.com/assets/images/tuclinicaweb-logo.svg",
+    "image": "https://tuclinicaweb.com/assets/images/og-image.webp",
+    "description": "Dise\u00f1amos, publicamos y mantenemos la web de tu cl\u00ednica dental por una cuota mensual fija, sin permanencia.",
+    "priceRange": "19\u20ac-49\u20ac/mes",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Espa\u00f1a"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Luciano Duca"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "\u00bfCu\u00e1nto tarda en estar publicada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Publicada en 5\u20137 d\u00edas laborables desde que apruebas la demo. Primero la ves funcionando con tus datos reales; el reloj empieza cuando dices \u00abadelante\u00bb."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfQui\u00e9n escribe los textos de mi web?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Los escribimos nosotros, pensados para que un paciente entienda en segundos por qu\u00e9 elegirte y c\u00f3mo pedir cita. T\u00fa los revisas y ajustamos lo que quieras antes de publicar."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ya tengo una web, \u00bfqu\u00e9 pasa con ella?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nada malo: seguimos con la actual publicada mientras preparamos la nueva. El cambio se hace solo cuando la apruebas, sin que tus pacientes se queden sin web ni un minuto."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Si me doy de baja, \u00bfqu\u00e9 me llevo exactamente?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El dominio queda siempre a tu nombre, te lo lleves cuando te lo lleves. Adem\u00e1s te entregamos los textos y las im\u00e1genes de tu web para que puedas reutilizarlos. Sin permanencia y sin penalizaci\u00f3n."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "\u00bfEl alta se paga antes o despu\u00e9s de ver la demo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Despu\u00e9s. Preparamos tu demo con tus datos reales y la ves funcionando primero. Solo pagas el alta cuando la apruebas y decides publicarla. Ni un euro antes."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="header-main">
       <div class="logo">
-        <img src="assets/images/tuclinicaweb-logo.svg" alt="TuClínicaWeb" class="logo-img">
+        <img src="assets/images/tuclinicaweb-logo.svg" alt="Logotipo de TuClínicaWeb" class="logo-img" width="32" height="32">
         <span>TuClínicaWeb</span>
       </div>
       <nav class="desktop">
@@ -395,7 +469,7 @@
         </div>
         <div class="chat-demo-aside">
           <div class="chat-demo-brand">
-            <span class="logo-chip"><img src="assets/images/tuclinicaweb-logo.svg" alt="TuClínicaWeb"></span>
+            <span class="logo-chip"><img src="assets/images/tuclinicaweb-logo.svg" alt="Logotipo de TuClínicaWeb" width="28" height="28" loading="lazy"></span>
             <span class="chat-demo-brand-name">TuClínicaWeb</span>
           </div>
           <p class="chat-demo-kicker">Tener tu propia web es necesario</p>
@@ -518,7 +592,7 @@
     <div class="footer-grid">
       <div class="footer-col">
         <div class="logo light">
-          <span class="logo-chip"><img src="assets/images/tuclinicaweb-logo.svg" alt="TuClínicaWeb"></span>
+          <span class="logo-chip"><img src="assets/images/tuclinicaweb-logo.svg" alt="Logotipo de TuClínicaWeb" width="36" height="36" loading="lazy"></span>
           <span>TuClínicaWeb</span>
         </div>
         <p class="footer-desc">Webs para clínicas dentales que convierten búsquedas en citas</p>
@@ -531,6 +605,17 @@
           <a href="#precios">Precios</a>
           <a href="#nosotros">Nosotros</a>
           <a href="#contacto">Contacto</a>
+        </nav>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-title">Guías</p>
+        <nav class="footer-nav">
+          <a href="precio-pagina-web-clinica-dental.html">Precio de una web dental</a>
+          <a href="diseno-web-dentistas.html">Diseño web para dentistas</a>
+          <a href="ejemplos-webs-clinicas-dentales.html">Ejemplos de webs dentales</a>
+          <a href="clinica-dental-no-aparece-google.html">No apareces en Google</a>
+          <a href="seo-local-clinicas-dentales.html">SEO local para clínicas</a>
         </nav>
       </div>
 
@@ -657,94 +742,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Structured data: Organization + Service -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://tuclinicaweb.com/#organization",
-        "name": "TuClínicaWeb",
-        "url": "https://tuclinicaweb.com",
-        "email": "hola@tuclinicaweb.com",
-        "logo": "https://tuclinicaweb.com/assets/images/tuclinicaweb-logo.svg",
-        "image": "https://tuclinicaweb.com/assets/images/og-image.webp",
-        "description": "Diseño, publicación y mantenimiento de webs para clínicas dentales de España por una cuota mensual fija, sin permanencia.",
-        "areaServed": {
-          "@type": "Country",
-          "name": "España"
-        }
-      },
-      {
-        "@type": "Service",
-        "name": "Webs para clínicas dentales",
-        "serviceType": "Diseño y mantenimiento de webs para clínicas dentales",
-        "provider": { "@id": "https://tuclinicaweb.com/#organization" },
-        "areaServed": {
-          "@type": "Country",
-          "name": "España"
-        },
-        "offers": [
-          { "@type": "Offer", "name": "Plan Básico", "price": "19", "priceCurrency": "EUR" },
-          { "@type": "Offer", "name": "Plan Profesional", "price": "29", "priceCurrency": "EUR" },
-          { "@type": "Offer", "name": "Plan Premium", "price": "49", "priceCurrency": "EUR" }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Structured data: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tarda en estar publicada?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Publicada en 5–7 días laborables desde que apruebas la demo. Primero la ves funcionando con tus datos reales; el reloj empieza cuando dices «adelante»."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Quién escribe los textos de mi web?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Los escribimos nosotros, pensados para que un paciente entienda en segundos por qué elegirte y cómo pedir cita. Tú los revisas y ajustamos lo que quieras antes de publicar."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Ya tengo una web, ¿qué pasa con ella?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Seguimos con la actual publicada mientras preparamos la nueva. El cambio se hace solo cuando la apruebas, sin que tus pacientes se queden sin web ni un minuto."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Si me doy de baja, ¿qué me llevo exactamente?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El dominio queda siempre a tu nombre. Además te entregamos los textos y las imágenes de tu web para que puedas reutilizarlos. Sin permanencia y sin penalización."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿El alta se paga antes o después de ver la demo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Después. Preparamos tu demo con tus datos reales y la ves funcionando primero. Solo pagas el alta cuando la apruebas y decides publicarla. Ni un euro antes."
-        }
-      }
-    ]
-  }
-  </script>
 
   <!-- JavaScript Module -->
   <script type="module" src="js/main.js"></script>

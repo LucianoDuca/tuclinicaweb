@@ -1,0 +1,182 @@
+/* Article layout for SEO landing pages (guías) */
+.articulo {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem var(--spacing-lg) 4rem;
+}
+
+.articulo-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: var(--spacing-xl);
+}
+
+.articulo-back:hover {
+  color: var(--text);
+}
+
+.articulo-kicker {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--spacing-sm);
+}
+
+.articulo h1 {
+  font-size: 2rem;
+  line-height: var(--line-height-tight);
+  letter-spacing: -0.01em;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: var(--spacing-md);
+}
+
+.articulo-lead {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.articulo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: var(--spacing-2xl) 0 var(--spacing-md);
+}
+
+.articulo h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: var(--spacing-lg) 0 var(--spacing-xs);
+}
+
+.articulo p {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+.articulo ul,
+.articulo ol {
+  margin: 0 0 var(--spacing-md) 1.25rem;
+}
+
+.articulo li {
+  color: var(--text-light);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 0.4rem;
+}
+
+.articulo strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Highlighted takeaway box */
+.articulo-nota {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--glass-border);
+  background: var(--glass);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+  backdrop-filter: blur(10px);
+}
+
+.articulo-nota p:last-child {
+  margin-bottom: 0;
+}
+
+/* Price table-ish rows */
+.articulo-precio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.articulo-precio:last-of-type {
+  border-bottom: none;
+}
+
+.articulo-precio-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.articulo-precio-amount {
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+/* Inline CTA block */
+.articulo-cta {
+  border-radius: var(--radius-3xl);
+  border: 1px solid var(--glass-border);
+  background: rgba(255,255,255,0.6);
+  padding: 2.5rem var(--spacing-lg);
+  margin: var(--spacing-2xl) 0;
+  text-align: center;
+  box-shadow: 0 24px 70px -30px rgba(0,0,0,0.32);
+  backdrop-filter: blur(20px);
+}
+
+.articulo-cta h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.articulo-cta p {
+  max-width: 32rem;
+  margin: 0 auto var(--spacing-lg);
+}
+
+/* Related links */
+.articulo-relacionados {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-light);
+}
+
+.articulo-relacionados p.articulo-relacionados-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.articulo-relacionados ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.articulo-relacionados a {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.articulo-relacionados a:hover {
+  color: var(--text);
+}
+
+@media (min-width: 640px) {
+  .articulo h1 {
+    font-size: 2.4rem;
+  }
+}
